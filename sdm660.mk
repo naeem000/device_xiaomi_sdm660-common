@@ -346,7 +346,6 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-vendorcompat \
     libprotobuf-cpp-lite-vendorcompat \
     libstdc++.vendor_32  \
-    vndk_package \
     vndk-ext
 
 # WiFi
