@@ -130,19 +130,6 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
 # Properties
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
-# Recovery
-ifneq ($(filter lavender,$(TARGET_DEVICE)),)
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab_A.qcom
-else ifeq ($(ENABLE_AB), true)
-ifeq ($(ENABLE_FBE), true)
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab_AB_fbe.qcom
-else
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab_AB.qcom
-endif
-else
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
-endif
-
 # Renderscript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 

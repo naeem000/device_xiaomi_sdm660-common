@@ -147,19 +147,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.freeform_window_management.xml
 
-# Fstab
-ifneq ($(filter lavender,$(TARGET_DEVICE)),)
-PRODUCT_PACKAGES += fstab_A.qcom
-else ifeq ($(ENABLE_AB), true)
-ifeq ($(ENABLE_FBE), true)
-PRODUCT_PACKAGES += fstab_AB_fbe.qcom
-else
-PRODUCT_PACKAGES += fstab_AB.qcom
-endif
-else
-PRODUCT_PACKAGES += fstab.qcom
-endif
-
 # Healthd
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
