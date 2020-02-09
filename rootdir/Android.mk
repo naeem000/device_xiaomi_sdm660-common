@@ -34,6 +34,7 @@ LOCAL_SRC_FILES    := bin/init.class_main.sh
 LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_EXECUTABLES)
 include $(BUILD_PREBUILT)
 
+ifndef MODULE.TARGET.ETC.init.qcom.usb.rc
 include $(CLEAR_VARS)
 LOCAL_MODULE       := init.qcom.usb.rc
 LOCAL_MODULE_TAGS  := optional
@@ -57,6 +58,7 @@ LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := bin/init.qcom.usb.sh
 LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_EXECUTABLES)
 include $(BUILD_PREBUILT)
+endif
 
 include $(CLEAR_VARS)
 LOCAL_MODULE       := init.recovery.qcom.rc
