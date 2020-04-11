@@ -11,6 +11,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
+
 <resources>
     <!-- Key codes of gestures. If the gesture is not supported set it to 0. -->
     <integer name="config_doubleTapKeyCode">143</integer>
@@ -28,4 +29,13 @@
     <integer name="config_doubleTapDefault">1</integer>
 
     <bool name="config_enableKeyHandler">true</bool>
+
+    <!-- The list of components which should be automatically disabled. -->
+    <string-array name="config_deviceDisabledComponents" translatable="false">
+        <item>com.google.android.gms/com.google.android.gms.nearby.messages.service.NearbyMessagesService</item>
+    </string-array>
+
+    <!-- Buttom brightness setting allowed by the power manager.
+         The user is forbidden from setting the brightness. -->
+    <integer name="config_buttonBrightnessSettingDefault">64</integer>
 </resources>
