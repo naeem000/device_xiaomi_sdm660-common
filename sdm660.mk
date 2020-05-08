@@ -185,10 +185,7 @@ PRODUCT_PACKAGES += \
     gralloc.sdm660 \
     hwcomposer.sdm660 \
     memtrack.sdm660 \
-    libdisplayconfig \
     liboverlay \
-    libqdMetaData \
-    libqdMetaData.system \
     libtinyxml \
     vendor.display.config@1.9 \
     vendor.display.config@1.9_vendor
@@ -400,7 +397,8 @@ PRODUCT_COPY_FILES += \
 TARGET_COMMON_QTI_COMPONENTS := \
     av \
     perf \
-    bt
+    bt \
+    wfd-legacy
 
 # RCS
 PRODUCT_PACKAGES += \
@@ -506,12 +504,3 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(COMMON_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
     $(COMMON_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
-
-# WiFi Display
-PRODUCT_PACKAGES += \
-    libaacwrapper \
-    libnl
-
-# WiFi Display JAR
-PRODUCT_BOOT_JARS += \
-    WfdCommon

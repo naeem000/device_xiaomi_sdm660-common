@@ -141,7 +141,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.enable_gl_backpressure=1 \
     debug.cpurend.vsync=false \
     debug.hwui.use_buffer_age=false \
-    persist.debug.wfd.enable=1 \
     persist.hwc.enable_vds=1 \
     ro.opengles.version=196610 \
     ro.qualcomm.cabl=0 \
@@ -322,8 +321,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Time daemon
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true
-
-# WFD
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.debug.wfd.enable=1 \
-    persist.sys.wfd.virtual=0
