@@ -24,9 +24,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.privapp.list=org.codeaurora.snapcam \
     persist.vendor.camera.dual.isp.sync=0 \
-    persist.vendor.camera.HAL3.enabled=1 \
     persist.vendor.camera.eis.enable=1 \
     persist.vendor.camera.exif.make=Xiaomi \
+    persist.vendor.camera.HAL3.enabled=1 \
     persist.vendor.camera.privapp.list=org.codeaurora.snapcam \
     vendor.camera.aux.packageblacklist=com.google.android.GoogleCamera,com.discord
 
@@ -36,43 +36,38 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.latch_unsignaled=1 \
-    debug.sf.enable_hwc_vds=1 \
-    debug.sf.hw=1 \
-    debug.sf.disable_backpressure= 1 \
-    debug.sf.early_app_phase_offset_ns=1500000 \
-    debug.sf.early_gl_phase_offset_ns=3000000 \
-    debug.sf.early_gl_app_phase_offset_ns=15000000 \
-    debug.sf.early_phase_offset_ns=1500000 \
-    debug.sf.enable_gl_backpressure=1 \
     debug.cpurend.vsync=false \
     debug.hwui.use_buffer_age=false \
+    debug.sf.disable_backpressure= 1 \
+    debug.sf.early_app_phase_offset_ns=1500000 \
+    debug.sf.early_gl_app_phase_offset_ns=15000000 \
+    debug.sf.early_gl_phase_offset_ns=3000000 \
+    debug.sf.early_phase_offset_ns=1500000 \
+    debug.sf.enable_gl_backpressure=1 \
+    debug.sf.enable_hwc_vds=1 \
+    debug.sf.hw=1 \
+    debug.sf.latch_unsignaled=1 \
     persist.hwc.enable_vds=1 \
     ro.opengles.version=196610 \
     ro.qualcomm.cabl=0 \
     vendor.display.disable_skip_validate=1 \
+    vendor.display.enable_default_color_mode=0 \
     vendor.gralloc.enable_fb_ubwc=1 \
     vendor.video.disable.ubwc=1 \
-    vendor.display.enable_default_color_mode=0 \
     video.disable.ubwc=1
 
 # The default sf phase offset is set to 6ms, to avoid it be included into next
 # vsync threshold, set high fps early sf and next vsync threshold phase offset
 # to 6.1ms, which is bigger than all sf phase offsets in normal frame rate.
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.high_fps_early_phase_offset_ns=6100000 \
     debug.sf.high_fps_early_gl_phase_offset_ns=9000000 \
+    debug.sf.high_fps_early_phase_offset_ns=6100000 \
     debug.sf.phase_offset_threshold_for_next_vsync_ns=6100000
 
 # Doze
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sensor.proximity=true \
     ro.sensor.pickup=android.sensor.tilt_detector
-
-# Fling
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.min.fling_velocity=160 \
-    ro.max.fling_velocity=20000
 
 # GMS
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -98,8 +93,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.low_ram=false \
     ro.lmk.kill_heaviest_task=true \
     ro.lmk.kill_timeout_ms=100 \
-    ro.lmk.use_minfree_levels=true \
-    ro.lmk.log_stats=true
+    ro.lmk.log_stats=true \
+    ro.lmk.use_minfree_levels=true
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -117,8 +112,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mmp.enable.3g2=true \
     persist.mm.enable.prefetch=true \
     vendor.vidc.dec.enable.downscalar=1 \
-    vendor.vidc.enc.disable.pq=true \
     vendor.vidc.enc.disable_bframes=1 \
+    vendor.vidc.enc.disable.pq=true \
     vidc.enc.dcvs.extra-buff-count=2 \
     vidc.enc.target_support_bframe=1
 
@@ -160,23 +155,22 @@ PRODUCT_ODM_PROPERTIES += \
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.backup.ntpServer=0.pool.ntp.org \
-    persist.radio.aosp_usr_pref_sel=true \
     persist.radio.add_power_save=1 \
-    persist.radio.VT_CAM_INTERFACE=2 \
     persist.radio.data_con_rprt=1 \
+    persist.radio.VT_CAM_INTERFACE=2 \
     persist.vendor.data.mode=concurrent \
     persist.vendor.qti.telephony.vt_cam_interface=1 \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.atfwd.start=true \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.data_con_rprt=1 \
+    persist.vendor.radio.procedure_bytes=SKIP \
     persist.vendor.radio.rat_on=combine \
     persist.vendor.radio.sib16_support=1 \
-    persist.vendor.radio.procedure_bytes=SKIP \
-    vendor.rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so \
     ro.telephony.default_network=9,9 \
     ro.telephony.iwlan_operation_mode=legacy \
-    ro.vendor.use_data_netmgrd=true
+    ro.vendor.use_data_netmgrd=true \
+    vendor.rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     DEVICE_PROVISIONED=1 \
@@ -197,7 +191,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.sdk.sensors.gestures=false \
     ro.vendor.sensors.cmc=false \
-    ro.vendor.sensors.dev_ori=false \
     ro.vendor.sensors.facing=false \
     ro.vendor.sensors.mot_detect=true \
     ro.vendor.sensors.pmd=true \
