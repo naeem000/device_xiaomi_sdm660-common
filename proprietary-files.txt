@@ -624,21 +624,6 @@ vendor/lib64/libsystem_health_mon.so|f4d36ecfbccd7d0d4c7af58cf87fe9375d804259
 vendor/bin/rmt_storage|be91c52bd0ff5c5bd13e31bf7cb5df1481d5b740
 vendor/etc/init/vendor.qti.rmt_storage.rc|bc212c6353c2ded44ae4d759605fbbe55aa4fa3f
 
-# Sensors - from LA.UM.8.2.r1-07400-sdm660.0
-product/lib/vendor.qti.hardware.sensorscalibrate@1.0.so|92142d25b6eaf6976e17e726ab70536534648459
-product/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so|a6486bb8506902bbe2a4b743000e3e91ab93246a
-vendor/bin/sensors.qti|2a5cee424e08848156865ea2291520cf7b4e6393
-vendor/lib/hw/activity_recognition.sdm660.so|47c588e1bdb357f31721171dc1d6a781c743bd64
-vendor/lib/libsensor1.so|b1b0dcb45432e51fabffe595010f35a017c7a3fd
-vendor/lib/libsensor_reg.so|170c40b9b7d48c922cd3ca1a552a34311ee79799
-vendor/lib/sensor_calibrate.so|9f81f1bf43b7871555915c9d57bba16d0419af40
-vendor/lib/sensors.ssc.so|2127a224529656d54b15177129ca6783784ccb24
-vendor/lib64/hw/activity_recognition.sdm660.so|d7dac1daafb812625094f5e85097c00fdc385da1
-vendor/lib64/libsensor1.so|dac9d5fb1b5aacfa5bedf812ebdd04eadd0af2dc
-vendor/lib64/libsensor_reg.so|be00c924983a2a279f799332cf2b262da9af78d1
-vendor/lib64/sensor_calibrate.so|dacb7a77e1713a756a43c082329e9f42e2c0d40e
-vendor/lib64/sensors.ssc.so|b53f9d8a5580feb9ca8f9e4efd080f76dc1d1588
-
 # SMC Invoke - from LA.UM.9.12.r1-10000-SMxx50.0-AOSPA
 vendor/etc/ssg/ta_config.json|a0dbaa356e4c50d90ee1249361094e1024e375e6
 vendor/etc/ssg/tz_whitelist.json|c0dc4f4cfee20db5993eb5142e362cba7dfaecd6
