@@ -86,11 +86,6 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/audio/audio_policy_configuration_a2dp_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_a2dp_offload_disabled.xml
 
-# ANT+
-PRODUCT_PACKAGES += \
-    AntHalService \
-    antradio_app
-
 # Biometrics
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sdm660
@@ -101,7 +96,6 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     com.qualcomm.qti.bluetooth_audio@1.0.vendor \
     liba2dpoffload \
-    libbluetooth_qti \
     libhfp \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor
@@ -247,8 +241,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
-    frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml \
