@@ -290,6 +290,7 @@ PRODUCT_COPY_FILES += \
 TARGET_COMMON_QTI_COMPONENTS := \
     av \
     bt \
+    gps \
     perf \
     telephony \
     wfd-legacy
