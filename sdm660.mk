@@ -299,6 +299,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     av \
     bt \
     perf \
+    telephony \
     wfd-legacy
 
 # RenderScript HAL
@@ -307,12 +308,8 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    android.hardware.radio.config@1.1 \
-    android.hardware.radio@1.2 \
-    android.hardware.radio@1.4 \
     android.hardware.secure_element@1.0 \
     libprotobuf-cpp-full \
-    librmnetctl \
     libxml2
 
 # Sensors
