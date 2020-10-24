@@ -235,9 +235,18 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(COMMON_PATH)/overlay \
-    $(COMMON_PATH)/overlay-pa
+PRODUCT_PACKAGES += \
+    AOSPASDM660Frameworks \
+    AOSPASDM660SystemUI \
+    SDM660CarrierConfig \
+    SDM660DocumentsUI \
+    SDM660Frameworks \
+    SDM660Settings \
+    SDM660SettingsLib \
+    SDM660SettingsProvider \
+    SDM660SystemUI \
+    SDM660Telephony \
+    SDM660Wifi
 
 # Permissions
 PRODUCT_COPY_FILES += \
