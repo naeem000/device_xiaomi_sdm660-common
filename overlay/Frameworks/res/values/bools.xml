@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2020 Paranoid Android
+<!-- Copyright (C) 2011 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,12 +14,6 @@
      limitations under the License.
 -->
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.carrierconfig.overlay.sdm660"
-    android:versionCode="1"
-    android:versionName="1.0">
-
-    <overlay android:targetPackage="com.android.carrierconfig"
-        android:priority="750"
-        android:isStatic="true" />
-</manifest>
+<resources>
+    <bool name="config_wifi_dual_sap_mode_enabled">false</bool>
+</resources>

@@ -238,7 +238,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AOSPASDM660Frameworks \
     AOSPASDM660SystemUI \
-    SDM660CarrierConfig \
     SDM660DocumentsUI \
     SDM660Frameworks \
     SDM660Settings \
@@ -300,6 +299,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     av \
     bt \
     gps \
+    overlay \
     perf \
     telephony \
     wfd-legacy

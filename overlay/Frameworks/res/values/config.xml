@@ -18,9 +18,6 @@
      for different hardware and product builds.  Do not translate. -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Whether the Unprocessed audio source supports the required frequency range and level -->
-    <bool name="config_supportAudioSourceUnprocessed">true</bool>
-
     <!-- reference volume index for music stream to limit headphone volume and display warning -->
     <integer name="config_safe_media_volume_index">15</integer>
 
@@ -28,21 +25,8 @@
        on the headphone/microphone jack. When false use the older uevent framework. -->
     <bool name="config_useDevInputEventForAudioJack">true</bool>
 
-    <!-- Flag indicating if the speed up audio on mt call code should be executed -->
-    <bool name="config_speed_up_audio_on_mt_calls">true</bool>
-
     <!-- Operating volatage for bluetooth controller. 0 by default-->
     <integer name="config_bluetooth_operating_voltage_mv">3700</integer>
-
-    <!-- Boolean indicating if current platform supports BLE peripheral mode -->
-    <bool name="config_bluetooth_le_peripheral_mode_supported">true</bool>
-
-    <!-- Boolean indicating if current platform supports HFP inband ringing -->
-    <bool name="config_bluetooth_hfp_inband_ringing_support">true</bool>
-
-    <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
-         Software implementation will be used if config_hardware_auto_brightness_available is not set -->
-    <bool name="config_automatic_brightness_available">true</bool>
 
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
          The N entries of this array define N  1 zones as follows:
@@ -663,10 +647,6 @@
     <!-- Enable video pause workaround when enabling/disabling the camera. -->
     <bool name="config_useVideoPauseWorkaround">true</bool>
 
-    <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
-         in hardware. -->
-    <bool name="config_setColorTransformAccelerated">true</bool>
-
     <!-- Set this to true to enable the platform's auto-power-save modes like doze and
          app standby.  These are not enabled by default because they require a standard
          cloud-to-device messaging service for apps to interact correctly with the modes
@@ -675,17 +655,6 @@
          correctly use them when installed on your device.  Otherwise, keep this disabled
          so that applications can still use their own mechanisms. -->
    <bool name="config_enableAutoPowerModes">true</bool>
-
-    <!-- ComponentName of a dream to show whenever the system would otherwise have
-         gone to sleep.  When the PowerManager is asked to go to sleep, it will instead
-         try to start this dream if possible.  The dream should typically call startDozing()
-         to put the display into a low power state and allow the application processor
-         to be suspended.  When the dream ends, the system will go to sleep as usual.
-         Specify the component name or an empty string if none.
-
-         Note that doze dreams are not subject to the same start conditions as ordinary dreams.
-         Doze dreams will run whenever the power manager is in a dozing state. -->
-    <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
 
     <!-- Control whether the always on display mode is available. This should only be enabled on
          devices where the display has been tuned to be power efficient in DOZE and/or DOZE_SUSPEND
@@ -742,9 +711,6 @@
          The default is false. -->
     <bool name="config_lidControlsSleep">true</bool>
 
-    <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
-    <bool name="config_unplugTurnsOnScreen">true</bool>
-
     <!-- Control the behavior when the user long presses the home button.
             0 - Nothing
             1 - Menu key
@@ -757,26 +723,11 @@
     -->
     <integer name="config_longPressOnHomeBehavior">3</integer>
 
-    <!--  Define Google play service package for FRP-->
-    <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
-
     <!-- Flag indicating whether round icons should be parsed from the application manifest. -->
    <bool name="config_useRoundIcon">true</bool>
 
    <!-- Specifies the path that is used by AdaptiveIconDrawable class to crop launcher icons. -->
    <string name="config_icon_mask" translatable="false">"M50 0C77.6 0 100 22.4 100 50C100 77.6 77.6 100 50 100C22.4 100 0 77.6 0 50C0 22.4 22.4 0 50 0Z"</string>
-
-   <!-- Flag specifying whether VoLTE is available on device -->
-   <bool name="config_device_volte_available">true</bool>
-
-   <!-- Flag specifying whether VoLTE should be available for carrier: independent of
-        carrier provisioning. If false: hard disabled. If true: then depends on carrier
-        provisioning, availability etc -->
-   <bool name="config_carrier_volte_available">true</bool>
-   <bool name="config_device_vt_available">true</bool>
-
-   <!-- Flag specifying whether WFC over IMS is available on device -->
-   <bool name="config_device_wfc_ims_available">true</bool>
 
    <!-- Flag specifying whether WFC over IMS should be available for carrier: independent of
         carrier provisioning. If false: hard disabled. If true: then depends on carrier
@@ -800,15 +751,6 @@
 
     <!-- MMS user agent prolfile url -->
     <string name="config_mms_user_agent_profile_url" translatable="false">http://www.google.com/oha/rdf/ua-profile-kila.xml</string>
-
-    <!-- Set to true to add links to Cell Broadcast app from Settings and MMS app. -->
-    <bool name="config_cellBroadcastAppLinks">true</bool>
-
-    <!--  Maximum number of supported users -->
-    <integer name="config_multiuserMaximumUsers">4</integer>
-
-    <!--  Whether Multiuser UI should be shown -->
-    <bool name="config_enableMultiUserUI">true</bool>
 
     <!-- If this is true, device supports Sustained Performance Mode. -->
     <bool name="config_sustainedPerformanceModeSupported">true</bool>
@@ -846,30 +788,6 @@
          one bar higher than they actually are -->
     <bool name="config_inflateSignalStrength">true</bool>
 
-    <!-- This string array should be overridden by the device to present a list of network
-         attributes.  This is used by the connectivity manager to decide which networks can coexist
-         based on the hardware -->
-    <!-- An Array of "[Connection name],[ConnectivityManager.TYPE_xxxx],
-         [associated radio-type],[priority],[restoral-timer(ms)],[dependencyMet]  -->
-    <!-- the 5th element "resore-time" indicates the number of milliseconds to delay
-         before automatically restore the default connection.  Set -1 if the connection
-         does not require auto-restore. -->
-    <!-- the 6th element indicates boot-time dependency-met value. -->
-    <string-array translatable="false" name="networkAttributes">
-        <item>"wifi,1,1,1,-1,true"</item>
-        <item>"mobile,0,0,0,-1,true"</item>
-        <item>"mobile_mms,2,0,4,60000,true"</item>
-        <item>"mobile_supl,3,0,2,60000,true"</item>
-        <item>"mobile_dun,4,0,2,60000,true"</item>
-        <item>"mobile_hipri,5,0,3,60000,true"</item>
-        <item>"mobile_fota,10,0,2,60000,true"</item>
-        <item>"mobile_ims,11,0,2,60000,true"</item>
-        <item>"mobile_cbs,12,0,2,60000,true"</item>
-        <item>"bluetooth,7,7,2,-1,true"</item>
-        <item>"mobile_emergency,15,0,5,-1,true"</item>
-        <item>"ethernet,9,9,9,-1,true"</item>
-    </string-array>
-
     <!-- This string array should be overridden by the device to present a list of radio
          attributes.  This is used by the connectivity manager to decide which networks can coexist
          based on the hardware -->
@@ -882,98 +800,12 @@
         <item>"9,1"</item>
     </string-array>
 
-
-    <!-- Configure mobile tcp buffer sizes in the form:
-         rat-name:rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max
-         If no value is found for the rat-name in use, the system default will be applied.
-    -->
-    <string-array name="config_mobile_tcp_buffers">
-        <item>"5gnr:2097152,6291456,16777216,512000,2097152,8388608"</item>
-        <item>"lte:2097152,4194304,8388608,262144,524288,1048576"</item>
-        <item>"lte_ca:4096,6291456,12582912,4096,1048576,2097152"</item>
-        <item>"umts:4094,87380,1220608,4096,16384,1220608"</item>
-        <item>"hspa:4094,87380,1220608,4096,16384,1220608"</item>
-        <item>"hsupa:4094,87380,1220608,4096,16384,1220608"</item>
-        <item>"hsdpa:4094,87380,1220608,4096,16384,1220608"</item>
-        <item>"hspap:4094,87380,1220608,4096,16384,1220608"</item>
-        <item>"edge:4093,26280,35040,4096,16384,35040"</item>
-        <item>"gprs:4092,8760,11680,4096,8760,11680"</item>
-        <item>"evdo:4094,87380,524288,4096,16384,262144"</item>
-    </string-array>
-
-    <!-- Boolean indicating if restoring network selection should be skipped -->
-    <!-- The restoring is handled by modem if it is true-->
-    <bool translatable="false" name="skip_restoring_network_selection">true</bool>
-
-    <!-- Is the device capable of hot swapping an ICC Card -->
-    <bool name="config_hotswapCapable">true</bool>
-
-    <!-- Config determines whether to update phone object when voice registration
-         state changes. Voice radio tech change will always trigger an update of
-         phone object irrespective of this config -->
-    <bool name="config_switch_phone_on_voice_reg_state_change">false</bool>
-
     <!-- If true, the screen can be rotated via the accelerometer in all 4
          rotations as the default behavior. -->
     <bool name="config_allowAllRotations">true</bool>
 
     <!-- Flag indicating whether we should enable smart battery. -->
     <bool name="config_smart_battery_available">true</bool>
-
-    <!-- List of regexpressions describing the interface (if any) that represent tetherable
-         USB interfaces.  If the device doesn't want to support tething over USB this should
-         be empty.  An example would be "usb.*" -->
-    <string-array translatable="false" name="config_tether_usb_regexs">
-        <item>"usb\\d"</item>
-        <item>"rndis\\d"</item>
-    </string-array>
-
-    <!-- List of regexpressions describing the interface (if any) that represent tetherable
-         Wifi interfaces.  If the device doesn't want to support tethering over Wifi this
-         should be empty.  An example would be "softap.*" -->
-    <string-array translatable="false" name="config_tether_wifi_regexs">
-        <item>"wlan0"</item>
-        <item>"softap0"</item>
-    </string-array>
-
-    <!-- List of regexpressions describing the interface (if any) that represent tetherable
-         bluetooth interfaces.  If the device doesn't want to support tethering over bluetooth this
-         should be empty. -->
-    <string-array translatable="false" name="config_tether_bluetooth_regexs">
-        <item>"bt-pan"</item>
-    </string-array>
-
-    <!-- Dhcp range (min, max) to use for tethering purposes -->
-    <!-- USB is  192.168.42.1 and 255.255.255.0
-         Wifi is 192.168.43.1 and 255.255.255.0
-         BT is limited to max default of 5 connections. 192.168.44.1 to 192.168.48.1
-         with 255.255.255.0
-         P2P is 192.168.49.1 and 255.255.255.0
-         Wigig is 192.168.50.1 and 255.255.255.0
-         Wigig P2P is 192.168.51.1 and 255.255.255.0
-    -->
-    <string-array translatable="false" name="config_tether_dhcp_range">
-        <item>192.168.42.2</item>
-        <item>192.168.42.254</item>
-        <item>192.168.43.2</item>
-        <item>192.168.43.254</item>
-        <item>192.168.44.2</item>
-        <item>192.168.44.254</item>
-        <item>192.168.45.2</item>
-        <item>192.168.45.254</item>
-        <item>192.168.46.2</item>
-        <item>192.168.46.254</item>
-        <item>192.168.47.2</item>
-        <item>192.168.47.254</item>
-        <item>192.168.48.2</item>
-        <item>192.168.48.254</item>
-        <item>192.168.49.2</item>
-        <item>192.168.49.254</item>
-        <item>192.168.50.2</item>
-        <item>192.168.50.254</item>
-        <item>192.168.51.2</item>
-        <item>192.168.51.254</item>
-    </string-array>
 
     <!-- Vibrator pattern for feedback about a long screen/key press -->
     <integer-array name="config_longPressVibePattern">
@@ -1019,18 +851,6 @@
     -->
     <bool name="config_enableWifiDisplay">true</bool>
 
-    <!-- Set to true if the wifi display supports compositing content stored
-         in gralloc protected buffers.  For this to be true, there must exist
-         a protected hardware path for surface flinger to composite and send
-         protected buffers to the wifi display video encoder.
-         If this flag is false, we advise applications not to use protected
-         buffers (if possible) when presenting content to a wifi display because
-         the content may be blanked.
-         This flag controls whether the {@link Display#FLAG_SUPPORTS_PROTECTED_BUFFERS}
-         flag is set for wifi displays.
-    -->
-    <bool name="config_wifiDisplaySupportsProtectedBuffers">true</bool>
-
     <!-- If true, the display will be shifted around in ambient mode. -->
     <bool name="config_enableBurnInProtection">true</bool>
 
@@ -1052,4 +872,8 @@
 
     <!-- Telephony qualified networks service package name to bind to by default. -->
     <string name="config_qualified_networks_service_package">vendor.qti.iwlan</string>
+
+    <!-- The default peak refresh rate for a given device. Change this value if you want to allow
+         for higher refresh rates to be automatically used out of the box -->
+    <integer name="config_defaultPeakRefreshRate">60</integer>
 </resources>
