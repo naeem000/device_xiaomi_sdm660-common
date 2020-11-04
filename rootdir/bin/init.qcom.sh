@@ -58,4 +58,4 @@ chmod g-w /data/vendor/modem_config
 setprop ro.vendor.ril.mbn_copy_completed 1
 
 #set default loglevel to KERN_WARNING
-echo "4 4 1 4" > /proc/sys/kernel/printk
+echo "3 4 1 4" > /proc/sys/kernel/printk
