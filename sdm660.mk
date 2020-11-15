@@ -49,14 +49,10 @@ PRODUCT_PACKAGES += \
 # Boot control
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl \
+    android.hardware.boot@1.0-impl.recovery \
     android.hardware.boot@1.0-service \
-    bootctrl.sdm660
-
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     bootctrl.sdm660 \
-    libcutils \
-    librecovery_updater_msm \
-    libz
+    bootctrl.sdm660.recovery
 
 # Boot control debug
 PRODUCT_PACKAGES_DEBUG += \
@@ -67,6 +63,9 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
     update_verifier
+
+PRODUCT_HOST_PACKAGES += \
+    brillo_update_payload
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
