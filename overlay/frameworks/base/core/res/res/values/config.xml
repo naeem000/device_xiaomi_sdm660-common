@@ -757,9 +757,6 @@
     -->
     <integer name="config_longPressOnHomeBehavior">3</integer>
 
-    <!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
-    <bool name="config_swipe_up_gesture_setting_available">true</bool>
-
     <!--  Define Google play service package for FRP-->
     <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
 
@@ -785,12 +782,6 @@
         carrier provisioning. If false: hard disabled. If true: then depends on carrier
         provisioning, availability etc -->
    <bool name="config_carrier_wfc_ims_available">true</bool>
-
-   <!-- ImsService package name to bind to by default, if config_dynamic_bind_ims is true -->
-   <string name="config_ims_package">org.codeaurora.ims</string>
-
-   <!-- Flag specifying whether or not IMS will use the ImsResolver dynamically -->
-   <bool name="config_dynamic_bind_ims">true</bool>
 
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
@@ -844,19 +835,6 @@
       <item>/system/lib64/libblas.so</item>
       <item>"/system/lib64/libsurfaceflinger.so"</item>
    </string-array>
-
-    <!-- List of files pinned by the Pinner Service with the apex boot image b/119800099 -->
-    <string-array translatable="false" name="config_apexBootImagePinnerServiceFiles">
-      <item>"/system/framework/framework.jar"</item>
-      <item>"/system/framework/services.jar"</item>
-      <item>"/system/framework/arm64/apex.oat"</item>
-      <item>"/system/framework/arm64/apex-core-libart.oat"</item>
-      <item>"/apex/com.android.runtime/javalib/core-oj.jar"</item>
-      <item>"/apex/com.android.runtime/javalib/core-libart.jar"</item>
-      <item>"/apex/com.android.media/javalib/updatable-media.jar"</item>
-      <item>"/system/priv-app/SystemUI/SystemUI.apk"</item>
-      <item>"/system/lib64/libsurfaceflinger.so"</item>
-    </string-array>
 
     <!-- True if camera app should be pinned via Pinner Service -->
     <bool name="config_pinnerCameraApp">true</bool>
@@ -1021,33 +999,11 @@
      available on some devices. -->
     <bool name="config_enableHapticTextHandle">true</bool>
 
-    <!-- Boolean indicating whether the wifi chipset has background scan support -->
-    <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
-
-    <!-- Wifi driver supports batched scan -->
-    <bool translatable="false" name="config_wifi_batched_scan_supported">true</bool>
-
-    <!-- Configure wifi tcp buffersizes in the form:
-         rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max -->
-    <string name="config_wifi_tcp_buffers" translatable="false">524288,2097152,8388608,262144,524288,4194304</string>
-
-    <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
-    <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
-
     <!-- list of interface names for SoftAp in Dual mode. -->
     <string-array translatable="false" name="config_wifi_dual_sap_interfaces">
         <item>"softap1"</item>
         <item>"softap2"</item>
     </string-array>
-
-    <!-- True if the firmware supports connected MAC randomization -->
-    <bool name="config_wifi_connected_mac_randomization_supported">true</bool>
-
-    <!-- True if the firmware supports Wi-Fi link probing -->
-    <bool name="config_wifi_link_probing_supported">true</bool>
-
-    <!-- Enable 802.11ac for Wifi hotspot (SAP) -->
-    <bool translatable="false" name="config_wifi_softap_ieee80211ac_supported">true</bool>
 
     <!-- Whether WiFi display is supported by this device.
          There are many prerequisites for this feature to work correctly.
