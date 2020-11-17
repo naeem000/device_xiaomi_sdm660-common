@@ -41,10 +41,8 @@
 #include <sys/_system_properties.h>
 
 #include "vendor_init.h"
-#include "property_service.h"
 
 using android::base::GetProperty;
-using android::init::property_set;
 using android::base::ReadFileToString;
 using android::base::Trim;
 
