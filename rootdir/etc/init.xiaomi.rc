@@ -29,7 +29,7 @@ on property:vendor.post_boot.parsed=1
     write /dev/cpuset/system-background/cpus 0-3
     write /dev/cpuset/restricted/cpus 0-3
     write /sys/module/cpu_boost/parameters/input_boost_freq 0:1401600
-    write /sys/module/cpu_boost/parameters/input_boost_ms 60
+    write /sys/module/cpu_boost/parameters/input_boost_ms 200
 
 service adsprpcd_root /vendor/bin/adsprpcd
     class main
