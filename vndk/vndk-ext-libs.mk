@@ -42,5 +42,6 @@ EXTRA_VENDOR_LIBRARIES_32 := \
     libvibrator
 
 EXTRA_VENDOR_LIBRARIES_64 := \
+    libandroidicu \
     libstdc++ \
     libpowermanager
