@@ -4,8 +4,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-filter=speed \
     dalvik.vm.dex2oat-threads=8 \
     dalvik.vm.image-dex2oat-filter=speed \
-    ro.sys.fw.dex2oat_thread_count=8 \
-    ro.vendor.qti.am.reschedule_service=true
+    ro.sys.fw.dex2oat_thread_count=8
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -61,14 +60,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.video.disable.ubwc=1 \
     video.disable.ubwc=1
 
-# The default sf phase offset is set to 6ms, to avoid it be included into next
-# vsync threshold, set high fps early sf and next vsync threshold phase offset
-# to 6.1ms, which is bigger than all sf phase offsets in normal frame rate.
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.high_fps_early_gl_phase_offset_ns=9000000 \
-    debug.sf.high_fps_early_phase_offset_ns=6100000 \
-    debug.sf.phase_offset_threshold_for_next_vsync_ns=6100000
-
 # Doze
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sensor.proximity=true \
@@ -122,10 +113,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vidc.enc.dcvs.extra-buff-count=2 \
     vidc.enc.target_support_bframe=1
 
-# Memory optimizations
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.qti.sys.fw.bservice_enable=true
-
 # Netflix custom property
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.netflix.bsp_rev=Q660-13149-1
@@ -149,13 +136,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.dpm.feature=1 \
     persist.vendor.dpm.nsrm.bkg.evt=3955 \
     persist.vendor.qcomsysd.enabled=1
-
-# QTI
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.vendor.qti.va_aosp.support=1
-
-PRODUCT_ODM_PROPERTIES += \
-    ro.vendor.qti.va_odm.support=1
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -182,15 +162,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.sys.fflag.override.settings_network_and_internet_v2=true \
     ril.subscription.types=NV,RUIM \
     telephony.lteOnCdmaDevice=1
-
-# Rendering
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.egl.hw=1 \
-    debug.enable.sglscale=1 \
-    debug.sf.disable_hwc=0 \
-    debug.sf.gpu_comp_tiling=1 \
-    debug.sf.recomputecrop=0 \
-    persist.hwc.ptor.enable=true
 
 # Sensor
 PRODUCT_PROPERTY_OVERRIDES += \
