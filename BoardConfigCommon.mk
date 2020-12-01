@@ -123,13 +123,6 @@ ifneq ($(ENABLE_FBE), true)
 TARGET_USERIMAGES_USE_F2FS := true
 endif
 
-# Extra Symlink
-BOARD_ROOT_EXTRA_SYMLINKS := \
-    /mnt/vendor/persist:/persist \
-    /vendor/bt_firmware:/bt_firmware \
-    /vendor/dsp:/dsp \
-    /vendor/firmware_mnt:/firmware
-
 # Directory
 TARGET_COPY_OUT_PRODUCT := system/product
 TARGET_COPY_OUT_VENDOR := vendor
@@ -164,6 +157,9 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/public
 BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+
+# Symlinks
+TARGET_MOUNT_POINTS_SYMLINKS := true
 
 # Treble
 PRODUCT_FULL_TREBLE_OVERRIDE := true
