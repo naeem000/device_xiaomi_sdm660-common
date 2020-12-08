@@ -167,16 +167,16 @@ PRODUCT_COPY_FILES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    init.class_main.sh \
     init.goodix.sh \
-    init.qcom.post_boot.sh \
-    init.qcom.rc \
-    init.qcom.sh \
-    init.qcom.usb.rc \
+    init.qcom.sensors.sh \
     init.qcom.usb.sh \
-    init.recovery.qcom.rc \
+    init.qti.dcvs.sh \
+    init.qti.qseecomd.sh \
+    init.qcom.usb.rc \
+    init.target_ota.rc \
     init.target.rc \
-    ueventd.qcom.rc
+    init.xiaomi.rc \
+    ueventd.xiaomi.rc
 
 # Ion
 PRODUCT_PACKAGES += \
@@ -297,6 +297,7 @@ TARGET_COMMON_QTI_COMPONENTS += \
     av \
     bt \
     gps \
+    init \
     overlay \
     perf \
     telephony \
