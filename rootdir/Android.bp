@@ -12,6 +12,33 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+prebuilt_etc {
+    name: "fstab.qcom",
+    src: "etc/fstab.qcom",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "fstab_A.qcom",
+    filename: "fstab.qcom",
+    src: "etc/fstab_A.qcom",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "fstab_AB.qcom",
+    filename: "fstab.qcom",
+    src: "etc/fstab_AB.qcom",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "fstab_AB_fbe.qcom",
+    filename: "fstab.qcom",
+    src: "etc/fstab_AB_fbe.qcom",
+    vendor: true,
+}
+
 sh_binary {
     name: "init.goodix.sh",
     src: "bin/init.goodix.sh",

@@ -148,8 +148,17 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.freeform_window_management.xml
 
 # Fstab
-PRODUCT_PACKAGES += \
-    fstab.qcom
+ifneq ($(filter lavender,$(TARGET_DEVICE)),)
+PRODUCT_PACKAGES += fstab_A.qcom
+else ifeq ($(ENABLE_AB), true)
+ifeq ($(ENABLE_FBE), true)
+PRODUCT_PACKAGES += fstab_AB_fbe.qcom
+else
+PRODUCT_PACKAGES += fstab_AB.qcom
+endif
+else
+PRODUCT_PACKAGES += fstab.qcom
+endif
 
 # GPS / Location
 $(call inherit-product, hardware/qcom/gps/gps_vendor_product.mk)
