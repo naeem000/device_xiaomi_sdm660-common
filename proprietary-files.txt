@@ -236,14 +236,15 @@ vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc|c966350ee67d3a7
 vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so|57707e6f61b289e43a503cdef1db221c766d3f57
 vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so|b2d1f88ccd334631ea2002a5b6b5c8557201278f
 
-# DRM (Widevine) - from jasmine-user-10-QKQ1.190910.002-V11.0.4.0.QDIMIXM
+# DRM (Widevine) - from jasmine-user-10-QKQ1.190910.002-V11.0.17.0.QDIMIXM
 vendor/bin/hw/android.hardware.drm@1.2-service.widevine|1aed116c6cd73ee0c89a5eec050afab5c64b9f87
-vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|68767969f86126ada017fc09af151e299db651d5
-vendor/lib/mediadrm/libwvdrmengine.so|7b0dbc4a1c0e7ababe8835d804a900fba3a82380
-vendor/lib64/libcpion.so|fe301ba49fd4b70993e9a288595957715c38a73b
-vendor/lib64/libhdcpsrm.so|b74141509e50b6d1f7cb7c62e43302d5989e1c34
-vendor/lib64/libwvhidl.so|2489dbf5cc572dea567f9f3d3af7b2d269373b46
-vendor/lib64/mediadrm/libwvdrmengine.so|fe15c5e86482cad673789cd6992742d6124b0779
+vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|dee5b7838ac561a2292e89fc0c4ccd1932224215
+-vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.2-service.widevine.xml|e9c33ec4ff776ab02ddf49ec375184d2a8b19177
+vendor/lib/mediadrm/libwvdrmengine.so|a8bdbbfb3aa222095f1cb7658ec5c46fa41dd560
+vendor/lib64/libcpion.so|ff24ef248bb35fd3cc1081a63f33c2565dc6351f
+vendor/lib64/libhdcpsrm.so|ee8e7c29e2b716a8bb07c3cbb730e34d8af3c64e
+vendor/lib64/libwvhidl.so|38677623330ec145a62afdef110c713c9492671c
+vendor/lib64/mediadrm/libwvdrmengine.so|80280a2292db04a1eb3750df6897dea96f0f62f5
 
 # DRM (TUI) - from LA.UM.8.2.r1-07400-sdm660.0
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|d4d025e0a12af87f65104fe07801517938733603
@@ -311,7 +312,7 @@ vendor/lib64/vendor.qti.gnss@3.0-service.so|e799172a7113a35b1f17a8c5999713286c10
 vendor/lib64/vendor.qti.gnss@3.0.so|07ae1f9907a85d9adfb99be04b8c4d1497dbece0
 vendor/lib64/vendor.qti.hardware.cacert@1.0.so|b6ff1fa5d685ff3572993cbe8325c36654eea4d8
 
-# GPU firmware - from jasmine-user-10-QKQ1.190910.002-V11.0.4.0.QDIMIXM
+# GPU firmware - from jasmine-user-10-QKQ1.190910.002-V11.0.17.0.QDIMIXM
 vendor/firmware/a512_zap.b00|85a7fc0008f9a2071d8b3d0cc212b19141633267
 vendor/firmware/a512_zap.b01|e0b7818182fac232182bfb70a4f43ec3e36779b9
 vendor/firmware/a512_zap.b02|33cc074ca840ae59f310a0e217aa7409afb30ac2
@@ -703,13 +704,13 @@ vendor/lib/libSubSystemShutdown.so|7714c39dd503f3121f87b877811fa8ac6e8b7247
 vendor/lib64/libsubsystem_control.so|b2e8c7eb9d999137ae99ea38f85d7dac59c6dcc2
 vendor/lib64/libSubSystemShutdown.so|c934b2df57be86fdfb9bdf2046f9289af5e7a62c
 
-# Thermal - from wayne Miui 9.7.4
-vendor/bin/thermal-engine|231b81ee4cb726ae91cf03bae572ba44eb2d6da1
-vendor/lib/libthermalfeature.so|1f1eb616ba26b309a2fda7de40c2163a4acaaa35
-vendor/lib64/libthermalfeature.so|829b2fc0aa8c863d4b4b331e0a2c00663e01efe6
-vendor/lib64/libthermalioctl.so|e1844c66a556946b45bcb6c2e747460aa5201770
--vendor/lib/libthermalclient.so|34b6ee056ae8a6df578fc243f8acd3567a49d97b
--vendor/lib64/libthermalclient.so|20f1fd238fc81bf1c6828ec416121c0ef66e0df1
+# Thermal - from jasmine-user-10-QKQ1.190910.002-V11.0.17.0.QDIMIXM
+vendor/bin/thermal-engine|459c3fb5ab99ac95cff15387358c1d0e239a5735
+vendor/lib/libthermalfeature.so|b2a90496eb99301cc0f065fe97782358858668a3
+vendor/lib64/libthermalfeature.so|1c408911610e5b6a11853aff1900860f9e9a861f
+vendor/lib64/libthermalioctl.so|2f0ee866e9059b1df9ca7b63815591354e7c77d8
+-vendor/lib/libthermalclient.so|c3aecc7610e8f5775a6f6af2ff7790bef74380a1
+-vendor/lib64/libthermalclient.so|84072e150722cc668320f07a75cb8695ce1a79b0
 
 # Time services - from LA.UM.8.2.r1-07400-sdm660.0
 -vendor/app/TimeService/TimeService.apk|c935b678fdaed033513f044f6492361c3370f9f0
