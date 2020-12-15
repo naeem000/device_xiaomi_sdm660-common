@@ -88,7 +88,10 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     vendor/qcom/opensource/core-utils/vendor_framework_compatibility_matrix.xml
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 androidboot.console=ttyMSM0 earlycon=msm_serial_dm,0xc170000 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 swiotlb=1 androidboot.configfs=true androidboot.usbcontroller=a800000.dwc3
+BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 androidboot.console=ttyMSM0 earlycon=msm_serial_dm,0xc170000 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 androidboot.configfs=true androidboot.usbcontroller=a800000.dwc3
+ifeq ($(TARGET_KERNEL_VERSION),4.4)
+BOARD_KERNEL_CMDLINE += swiotlb=1
+endif
 BOARD_KERNEL_CMDLINE += usbcore.autosuspend=7
 BOARD_KERNEL_CMDLINE += loop.max_part=16
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
