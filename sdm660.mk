@@ -133,6 +133,10 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     memtrack.sdm660
 
+# DLKM
+KERNEL_MODULES_INSTALL := dlkm
+KERNEL_MODULES_OUT := $(OUT_DIR)/target/product/$(PA_BUILD)/$(KERNEL_MODULES_INSTALL)/lib/modules
+
 # Doze
 PRODUCT_PACKAGES += \
     ParanoidDoze
