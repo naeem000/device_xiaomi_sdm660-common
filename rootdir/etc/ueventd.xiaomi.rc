@@ -24,3 +24,6 @@
 
 # Thermal
 /sys/class/thermal/thermal_message  sconfig             0600    system  system
+
+# LEDs
+/sys/class/leds/red                 blink               0600    system  system
