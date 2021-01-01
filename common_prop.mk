@@ -8,7 +8,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.vc_call_vol_steps=7
+    ro.config.vc_call_vol_steps=7 \
+    vendor.audio.feature.spkr_prot.enable=false \
+    vendor.audio.feature.ssrec.enable=false
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \

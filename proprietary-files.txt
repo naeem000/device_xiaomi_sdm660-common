@@ -59,6 +59,7 @@ vendor/lib/libaudcal.so|2c7b95a1c0e43f1c7d8d679f472343776f7bf718
 vendor/lib/libaudioalsa.so|1d8eb7dae06b1cca0cd360a5996bb59a9bd8ba25
 vendor/lib/libaudioparsers.so|d898e3d2cc8177e916052527135258c8d9fc7e89
 vendor/lib/libdrc.so|aa8e8dd2a27803bf8ac36619036e1dc736be540b
+vendor/lib/libhdmipassthru.so|4385ddc8127cc2b97ca5b564951013c28a414d4d
 vendor/lib/libqtigef.so|10b64bf536b4edb6c09d047c218cfe4c9a9255f1
 vendor/lib64/libacdb-fts.so|fe3610a7cce613592e90245ce98a23be1763545c
 vendor/lib64/libacdbloader.so|1ca9195a3f00064f3addaf2e9443609d07fd8940
@@ -67,6 +68,7 @@ vendor/lib64/libadiertac.so|8f77a71f76ef3a88d06955c4d6d4d915d62c4c94
 vendor/lib64/libaudcal.so|80ee15046e7a7249a0c9def9bf3f3d94efd3ce6a
 vendor/lib64/libaudioalsa.so|bdf49c709df8a1a7a7e232a6cb1ba6d15af594c7
 vendor/lib64/libaudioparsers.so|ad9394501d467fd264675ead74a4e6bab34eadd5
+vendor/lib64/libhdmipassthru.so|cc4e2d6da9a8c2804b084c29bbd023e885505c09
 vendor/lib64/libqtigef.so|1b7fa4dacefd97f019c342477ff57dc861e70277
 
 # Alarm - from LA.UM.8.2.r1-07400-sdm660.0
