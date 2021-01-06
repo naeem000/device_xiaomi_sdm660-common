@@ -19,9 +19,6 @@
 /sys/class/power_supply/battery     charging_enabled    0600    system  system
 /sys/class/power_supply/battery     input_suspend       0600    system  system
 
-# DT2W
-/sys/touchpanel                     double_tap          0660    system  system
-
 # Thermal
 /sys/class/thermal/thermal_message  sconfig             0600    system  system
 
