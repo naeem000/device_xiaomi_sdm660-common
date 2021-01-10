@@ -23,13 +23,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.privapp.list=org.codeaurora.snapcam \
-    persist.vendor.camera.dual.isp.sync=0 \
-    persist.vendor.camera.eis.enable=1 \
-    persist.vendor.camera.exif.make=Xiaomi \
-    persist.vendor.camera.HAL3.enabled=1 \
-    persist.vendor.camera.privapp.list=org.codeaurora.snapcam \
-    vendor.camera.aux.packageblacklist=com.google.android.GoogleCamera,com.discord
+    persist.vendor.camera.preview.ubwc=0 \
+    vendor.video.disable.ubwc=1 \
+    vidc.enc.dcvs.extra-buff-count=2
 
 # Charger
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -96,7 +92,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.dec.enable.downscalar=1 \
     vendor.vidc.enc.disable_bframes=1 \
     vendor.vidc.enc.disable.pq=true \
-    vidc.enc.dcvs.extra-buff-count=2 \
     vidc.enc.target_support_bframe=1
 
 # Netflix custom property
