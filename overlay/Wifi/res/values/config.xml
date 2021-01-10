@@ -24,9 +24,6 @@
     <!-- True if the firmware supports Wi-Fi link probing -->
     <bool name="config_wifi_link_probing_supported">true</bool>
 
-    <!-- Do not translate. Default access point SSID used for tethering -->
-    <string name="wifi_tether_configure_ssid_default" translatable="false">Xiaomi SDM660</string>
-
     <!-- Do not translate. Default access point SSID used for local only hotspot -->
     <string name="wifi_localhotspot_configure_ssid_default" translatable="false">Xiaomi SDM660</string>
 
