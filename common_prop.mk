@@ -78,14 +78,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.vt_avail_ovr=1 \
     persist.vendor.ims.disableUserAgent=0
 
-# LMKD
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.low_ram=false \
-    ro.lmk.kill_heaviest_task=true \
-    ro.lmk.kill_timeout_ms=100 \
-    ro.lmk.log_stats=true \
-    ro.lmk.use_minfree_levels=true
-
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.stagefright.omx_default_rank.sw-audio=1 \
