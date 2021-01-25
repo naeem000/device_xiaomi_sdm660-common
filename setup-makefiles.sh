@@ -21,8 +21,6 @@ DEVICE_COMMON=sdm660-common
 GUARDED_DEVICES_COMMON="twolip jasmine_sprout wayne clover lavender platina jason whyred"
 VENDOR=xiaomi
 
-INITIAL_COPYRIGHT_YEAR=2018
-
 # Load extract_utils and do some sanity checks
 COMMON_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$COMMON_DIR" ]]; then COMMON_DIR="$PWD"; fi
@@ -33,7 +31,7 @@ fi
 
 ROOT="$COMMON_DIR"/../../..
 
-HELPER="$ROOT"/vendor/pa/build/tools/extract_utils.sh
+HELPER="$ROOT"/tools/extract-utils/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
@@ -59,7 +57,6 @@ if ([[ "$ONLY_COMMON" = "false" ]] || [[ -z "$ONLY_COMMON" ]]) && [[ -s "${DEVIC
         GUARDED_DEVICES=
     fi
     # Reinitialize the helper for device
-    INITIAL_COPYRIGHT_YEAR="$DEVICE_BRINGUP_YEAR"
     setup_vendor "$DEVICE" "$VENDOR" "$ROOT" "$IS_COMMON" "$CLEAN_VENDOR"
     # Copyright headers and guards
     write_headers "$GUARDED_DEVICES"
