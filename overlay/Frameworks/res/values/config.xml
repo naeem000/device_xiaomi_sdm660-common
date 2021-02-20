@@ -26,7 +26,7 @@
     <bool name="config_useDevInputEventForAudioJack">true</bool>
 
     <!-- Operating volatage for bluetooth controller. 0 by default-->
-    <integer name="config_bluetooth_operating_voltage_mv">3700</integer>
+    <integer name="config_bluetooth_operating_voltage_mv">3300</integer>
 
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
          The N entries of this array define N  1 zones as follows:
