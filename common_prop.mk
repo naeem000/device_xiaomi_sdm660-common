@@ -104,10 +104,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.oem_unlock_supported=1
 
-# Perf
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.extension_library=libqti-perfd-client.so
-
 # Proximity
 PRODUCT_PROPERTY_OVERRIDES += \
     gsm.proximity.enable=true
@@ -116,7 +112,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true \
     persist.vendor.cne.feature=1 \
-    persist.vendor.dpm.feature=1 \
     persist.vendor.dpm.nsrm.bkg.evt=3955 \
     persist.vendor.qcomsysd.enabled=1
 
