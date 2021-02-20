@@ -316,13 +316,6 @@ BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 PRODUCT_SOONG_NAMESPACES += \
     $(COMMON_PATH)
 
-# Tetheroffload
-PRODUCT_PACKAGES += \
-    ipacm \
-    IPACM_cfg.xml \
-    libipanat \
-    liboffloadhal
-
 # VNDK
 PRODUCT_PACKAGES += \
     libdng_sdk.vendor_32 \
