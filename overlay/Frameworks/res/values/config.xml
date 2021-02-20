@@ -771,12 +771,6 @@
      available on some devices. -->
     <bool name="config_enableHapticTextHandle">true</bool>
 
-    <!-- list of interface names for SoftAp in Dual mode. -->
-    <string-array translatable="false" name="config_wifi_dual_sap_interfaces">
-        <item>"softap1"</item>
-        <item>"softap2"</item>
-    </string-array>
-
     <!-- Whether WiFi display is supported by this device.
          There are many prerequisites for this feature to work correctly.
          Here are a few of them:
