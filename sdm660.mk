@@ -295,7 +295,7 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    android.hardware.secure_element@1.0 \
+    android.hardware.secure_element@1.2 \
     libprotobuf-cpp-full \
     libxml2
 
