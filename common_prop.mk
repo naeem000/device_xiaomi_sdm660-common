@@ -139,10 +139,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.max_virtual_display_dimension=4096 \
     ro.surface_flinger.protected_contents=true
 
-#Storaged
- PRODUCT_PROPERTY_OVERRIDES += \
-    ro.storaged.event.interval=99999
-
 # System restart
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.ssr.restart_level=ALL_ENABLE
