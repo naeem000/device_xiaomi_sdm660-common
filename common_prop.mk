@@ -27,6 +27,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.video.disable.ubwc=1 \
     vidc.enc.dcvs.extra-buff-count=2
 
+# CNE
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.cne.feature=1
+
 # Charger
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.charger.enable_suspend=true
@@ -66,16 +70,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     camera.hal1.packagelist=com.whatsapp,com.android.camera,com.android.camera2,com.instagram.android \
     vendor.camera.hal1.packagelist= com.whatsapp,com.android.camera,com.android.camera2,com.instagram.android
 
-# iwlan vowifi corresponding
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.data.iwlan.enable=true
-
-# IMS
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.dbg.volte_avail_ovr=1 \
-    persist.dbg.vt_avail_ovr=1 \
-    persist.vendor.ims.disableUserAgent=0
-
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.stagefright.omx_default_rank.sw-audio=1 \
@@ -111,34 +105,24 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # QCOM
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true \
-    persist.vendor.cne.feature=1 \
-    persist.vendor.dpm.nsrm.bkg.evt=3955 \
     persist.vendor.qcomsysd.enabled=1
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.backup.ntpServer=0.pool.ntp.org \
-    persist.radio.add_power_save=1 \
-    persist.radio.data_con_rprt=1 \
-    persist.radio.VT_CAM_INTERFACE=2 \
+    persist.vendor.data.iwlan.enable=true \
     persist.vendor.data.mode=concurrent \
-    persist.vendor.qti.telephony.vt_cam_interface=1 \
+    persist.vendor.dpmhalservice.enable=1 \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
-    persist.vendor.radio.atfwd.start=true \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.data_con_rprt=1 \
     persist.vendor.radio.procedure_bytes=SKIP \
     persist.vendor.radio.rat_on=combine \
     persist.vendor.radio.sib16_support=1 \
-    ro.telephony.default_network=9,9 \
+    ril.subscription.types=NV,RUIM \
+    rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so \
+    ro.telephony.default_network=9 \
     ro.telephony.iwlan_operation_mode=legacy \
     ro.vendor.use_data_netmgrd=true \
-    vendor.rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
-
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    DEVICE_PROVISIONED=1 \
-    persist.sys.fflag.override.settings_network_and_internet_v2=true \
-    ril.subscription.types=NV,RUIM \
     telephony.lteOnCdmaDevice=1
 
 # Sensor
@@ -168,6 +152,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Thermal configs path
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.thermal.data.path=/data/vendor/thermal/
+
+# Trusted Time
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.backup.ntpServer=0.pool.ntp.org
 
 # Time daemon
 PRODUCT_PROPERTY_OVERRIDES += \
