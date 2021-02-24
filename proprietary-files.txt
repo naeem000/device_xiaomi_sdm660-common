@@ -728,9 +728,6 @@ vendor/lib64/libsensor_reg.so|be00c924983a2a279f799332cf2b262da9af78d1
 vendor/lib64/sensor_calibrate.so|dacb7a77e1713a756a43c082329e9f42e2c0d40e
 vendor/lib64/sensors.ssc.so|b53f9d8a5580feb9ca8f9e4efd080f76dc1d1588
 
-# Soter - from LA.UM.8.2.r1-06200-sdm660.0
--app/SoterService/SoterService.apk|482523fabe02255e7ab6f80fbaaabe32c8fb3be9
-
 # Soter - from LA.UM.8.2.r1-07400-sdm660.0
 vendor/bin/hw/vendor.qti.hardware.soter@1.0-service|37f9501fa45a69ba3a27fd338704d76afc534bcb
 vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc|76447a61ad5529949365eeb7e8ca000e48bd28ae
