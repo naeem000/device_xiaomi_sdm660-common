@@ -21,8 +21,7 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.preview.ubwc=0 \
-    vendor.video.disable.ubwc=1 \
-    vidc.enc.dcvs.extra-buff-count=2
+    vendor.video.disable.ubwc=1
 
 # Charger
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -36,14 +35,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.enable_hwc_vds=1 \
     debug.sf.hw=1 \
-    persist.hwc.enable_vds=1 \
-    ro.qualcomm.cabl=0 \
     vendor.display.disable_skip_validate=1 \
     vendor.display.enable_default_color_mode=0 \
     vendor.gralloc.disable_ahardware_buffer=1 \
-    vendor.gralloc.enable_fb_ubwc=1 \
-    vendor.video.disable.ubwc=1 \
-    video.disable.ubwc=1
+    vendor.gralloc.enable_fb_ubwc=1
 
 # Doze
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -66,11 +61,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.vulkan=adreno \
     ro.opengles.version=196610
 
-# HAL1 apps list
-PRODUCT_PROPERTY_OVERRIDES += \
-    camera.hal1.packagelist=com.whatsapp,com.android.camera,com.android.camera2,com.instagram.android \
-    vendor.camera.hal1.packagelist= com.whatsapp,com.android.camera,com.android.camera2,com.instagram.android
-
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.volte_avail_ovr=1 \
@@ -81,21 +71,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.stagefright.omx_default_rank.sw-audio=1 \
     debug.stagefright.omx_default_rank=0 \
-    media.aac_51_output_enabled=true \
     media.stagefright.enable-aac=true \
     media.stagefright.enable-http=true \
     media.stagefright.enable-player=true \
     media.stagefright.enable-qcp=true \
     media.stagefright.enable-scan=true \
     media.stagefright.thumbnail.prefer_hw_codecs=true \
-    mm.enable.qcom_parser=13631471 \
-    mm.enable.smoothstreaming=true \
-    mmp.enable.3g2=true \
-    persist.mm.enable.prefetch=true \
     vendor.vidc.dec.enable.downscalar=1 \
     vendor.vidc.enc.disable_bframes=1 \
-    vendor.vidc.enc.disable.pq=true \
-    vidc.enc.target_support_bframe=1
+    vendor.vidc.enc.disable.pq=true
 
 # Netflix custom property
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -115,17 +99,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     gsm.proximity.enable=true
 
-# QCOM
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.timed.enable=true \
-    persist.vendor.qcomsysd.enabled=1
-
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.data.iwlan.enable=true \
     persist.vendor.dpmhalservice.enable=1 \
     persist.vendor.radio.data_con_rprt=1 \
-    rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so \
     ro.telephony.iwlan_operation_mode=legacy
 
 # Sensor
@@ -191,7 +169,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Trusted Time
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.backup.ntpServer=0.pool.ntp.org
-
-# Time daemon
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.timed.enable=true
