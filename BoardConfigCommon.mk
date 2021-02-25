@@ -81,11 +81,7 @@ TARGET_ENABLE_MEDIADRM_64 := true
 LOC_HIDL_VERSION := 4.0
 
 # HIDL
-ifneq ($(filter lavender,$(TARGET_DEVICE)),)
-DEVICE_MANIFEST_FILE := $(shell sed 's/3.0/4.0/g' $(COMMON_PATH)/manifest.xml > manifest.xml && echo manifest.xml)
-else
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
-endif
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 
 # Kernel
