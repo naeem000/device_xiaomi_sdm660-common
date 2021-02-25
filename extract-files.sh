@@ -78,7 +78,15 @@ function blob_fixup() {
         sed -i 's/xml version="2.0"/xml version="1.0"/' "${2}"
 
     esac
+
+    device_blob_fixup "$@"
 }
+
+if ! typeset -f device_blob_fixup > /dev/null; then
+    device_blob_fixup() {
+        :
+    }
+fi
 
 # Initialize the common helper
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$ROOT" true $CLEAN_VENDOR
