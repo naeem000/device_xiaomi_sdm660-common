@@ -119,9 +119,6 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.6 \
     vendor.qti.hardware.camera.device@1.0
 
-# Dalvik
-$(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk )
-
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
