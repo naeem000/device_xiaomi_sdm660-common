@@ -318,6 +318,11 @@ BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 PRODUCT_SOONG_NAMESPACES += \
     $(COMMON_PATH)
 
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-service
+
 # VNDK
 PRODUCT_PACKAGES += \
     libdng_sdk.vendor_32 \
