@@ -377,6 +377,10 @@ PRODUCT_PACKAGES += \
 # Public Libraries
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+    
+# Perf
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/perfconfigstore.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfconfigstore.xml    
 
 # Low power Whitelist
 PRODUCT_COPY_FILES += \
