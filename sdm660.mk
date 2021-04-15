@@ -322,7 +322,8 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     init.xiaomi_parts.rc \
     init.verity.rc \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    apex_metadata.rc
 
 # FM
 ifeq ($(BOARD_HAVE_QCOM_FM),true)
