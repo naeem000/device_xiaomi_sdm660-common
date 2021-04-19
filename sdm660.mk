@@ -617,3 +617,6 @@ PRODUCT_PACKAGES += \
 # IPA
 USE_DEVICE_SPECIFIC_DATA_IPA_CFG_MGR := true
 USE_DEVICE_SPECIFIC_IPACFG_MGR := true
+
+# Inherit Mi Sound Enhancer
+$(call inherit-product-if-exists, vendor/xiaomi/dirac/dirac.mk)
