@@ -1,0 +1,3 @@
+attribute vendor_hal_qccvndhal;
+attribute vendor_hal_qccvndhal_client;
+attribute vendor_hal_qccvndhal_server;

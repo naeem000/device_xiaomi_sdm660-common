@@ -64,6 +64,9 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.xiaomi_sdm660-libperfmgr                                   u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power\.stats@1\.0-service\.mock                                           u:object_r:hal_power_stats_default_exec:s0
 
+# QCC
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qccvndhal@1\.0-service                                                u:object_r:vendor_hal_qccvndhal_qti_exec:s0
+
 # Shell Script
 /(vendor|system/vendor)/bin/init\.goodix\.sh                                                                                u:object_r:init_fingerprint_exec:s0
 /vendor/bin/sh                                                                                                              u:object_r:vendor_shell_exec:s0
