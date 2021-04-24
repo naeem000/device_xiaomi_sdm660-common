@@ -132,8 +132,8 @@ vendor/lib64/libcdsp_default_listener.so|33260b098ddde2d0e6cf44b11f12e4c16264fda
 vendor/lib64/libcdsprpc.so|9b269bfe9d91fc6359745482b2cb42625248c34c
 vendor/lib64/libsysmon_cdsp_skel.so|40d3511922c744016c419983b18f97952c23fee5
 
-# Charger - from LA.UM.8.2.r1-07500-sdm660.0
-vendor/bin/hvdcp_opti|67b45fb4c82ab78c9e8b00683c0700cdbe4afc40
+# Charger - from LA.UM.9.6.2.r1-04100-89xx.0
+vendor/bin/hvdcp_opti|fbaef63654a9b58a352aafe5537baa7496c11b4b
 
 # CNE - from LA.UM.8.2.r1-07500-sdm660.0
 -product/framework/vendor.qti.data.factory-V2.1-java.jar:system_ext/framework/vendor.qti.data.factory-V2.1-java.jar|3f8d28716003c02d9720c8c83a6d108a82359eae
