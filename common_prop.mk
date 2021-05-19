@@ -10,7 +10,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac \
     persist.vendor.qcom.bluetooth.enable.splita2dp=true \
     persist.vendor.qcom.bluetooth.soc=cherokee \
-    ro.bluetooth.library_name=libbluetooth_qti.so \
     vendor.qcom.bluetooth.soc=cherokee
 
 # Camera
@@ -18,10 +17,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.preview.ubwc=0 \
     vendor.video.disable.ubwc=1 \
     vidc.enc.dcvs.extra-buff-count=2
-
-# CNE
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.cne.feature=1
 
 # Charger
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -108,20 +103,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.data.iwlan.enable=true \
-    persist.vendor.data.mode=concurrent \
     persist.vendor.dpmhalservice.enable=1 \
-    persist.vendor.radio.apm_sim_not_pwdn=1 \
-    persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.data_con_rprt=1 \
-    persist.vendor.radio.procedure_bytes=SKIP \
-    persist.vendor.radio.rat_on=combine \
-    persist.vendor.radio.sib16_support=1 \
-    ril.subscription.types=NV,RUIM \
     rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so \
-    ro.telephony.default_network=9 \
-    ro.telephony.iwlan_operation_mode=legacy \
-    ro.vendor.use_data_netmgrd=true \
-    telephony.lteOnCdmaDevice=1
+    ro.telephony.iwlan_operation_mode=legacy
 
 # Sensor
 PRODUCT_PROPERTY_OVERRIDES += \
