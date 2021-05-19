@@ -32,14 +32,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     debug.sf.latch_unsignaled=1 \
     persist.hwc.enable_vds=1 \
-    ro.hardware.egl=adreno \
-    ro.hardware.vulkan=adreno \
     ro.qualcomm.cabl=0 \
     vendor.display.disable_skip_validate=1 \
     vendor.display.enable_default_color_mode=0 \
     vendor.gralloc.disable_ahardware_buffer=1 \
     vendor.gralloc.enable_fb_ubwc=1 \
-    vendor.opengles.version=196610 \
     vendor.video.disable.ubwc=1 \
     video.disable.ubwc=1
 
