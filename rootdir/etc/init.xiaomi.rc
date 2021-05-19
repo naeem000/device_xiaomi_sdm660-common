@@ -50,8 +50,3 @@ service vendor.cdsprpcd /vendor/bin/cdsprpcd
     user system
     group system
     disabled
-
-service vendor.qfp-daemon /vendor/bin/qfp-daemon
-    class late_start
-    user system
-    group system drmrpc diag input
