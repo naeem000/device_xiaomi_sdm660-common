@@ -25,6 +25,9 @@
 # Common Tree Path
 COMMON_PATH := device/xiaomi/sdm660-common
 
+# Kernel version
+TARGET_KERNEL_VERSION ?= 4.4
+
 # A/B
 ifeq ($(ENABLE_AB), true)
 AB_OTA_UPDATER := true
@@ -131,7 +134,6 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET     := 0x01000000
 TARGET_KERNEL_APPEND_DTB := true
 TARGET_KERNEL_SOURCE ?= kernel/xiaomi/sdm660
-TARGET_KERNEL_VERSION ?= 4.4
 
 BOARD_DO_NOT_STRIP_VENDOR_MODULES := true
 
