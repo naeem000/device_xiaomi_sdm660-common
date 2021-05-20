@@ -322,9 +322,11 @@ PRODUCT_SOONG_NAMESPACES += \
     device/qcom/common/perf
 
 # Vibrator
+ifeq ($(filter vibrator,$(TARGET_COMMON_QTI_COMPONENTS)),)
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
+endif
 
 # VNDK
 PRODUCT_PACKAGES += \
