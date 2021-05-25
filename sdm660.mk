@@ -170,7 +170,6 @@ PRODUCT_PACKAGES += \
     init.goodix.sh \
     init.qcom.sensors.sh \
     init.qti.dcvs.sh \
-    init.qti.qseecomd.sh \
     init.target_ota.rc \
     init.target.rc \
     init.xiaomi.rc \
