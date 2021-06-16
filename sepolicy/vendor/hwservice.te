@@ -1,2 +1,0 @@
-type hal_mlipay_hwservice, hwservice_manager_type;
-type vendor_hal_qccvndhal_hwservice, hwservice_manager_type, protected_hwservice;
