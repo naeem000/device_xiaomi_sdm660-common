@@ -45,14 +45,11 @@ public class DeviceSettings extends PreferenceFragment implements
     
     public static final String PREF_KEY_FPS_INFO = "fps_info";
     
-    public static final  String CATEGORY_AUDIO = "audio";
+    public static final  String CATEGORY_AUDIO_AMPLIFY = "audio_amplify";
     public static final  String PREF_HEADPHONE_GAIN = "headphone_gain";
     public static final  String PREF_MIC_GAIN = "mic_gain";
     public static final  String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
     public static final  String MIC_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
-    
-    private static final String DIRAC_PACKAGE_NAME = "com.xiaomi.dirac";
-    private static final String PREF_DIRAC = "dirac";
 
     // value of vtg_min and vtg_max
     public static final int MIN_VIBRATION = 116;
@@ -90,24 +87,14 @@ public class DeviceSettings extends PreferenceFragment implements
             vibrationStrength.setOnPreferenceChangeListener(this);
         } else { getPreferenceScreen().removePreference(findPreference(CATEGORY_VIBRATOR)); }
         
-        PreferenceCategory audioCategory = (PreferenceCategory) findPreference(CATEGORY_AUDIO);
-        // Headphone Gain
-        if (FileUtils.fileWritable(HEADPHONE_GAIN_PATH)) {
+        // Headphone & Mic Gain
+        if (FileUtils.fileWritable(HEADPHONE_GAIN_PATH) && FileUtils.fileWritable(MIC_GAIN_PATH)) {
            CustomSeekBarPreference headphoneGain = (CustomSeekBarPreference) findPreference(PREF_HEADPHONE_GAIN);
            headphoneGain.setOnPreferenceChangeListener(this);
-        } else {
-          audioCategory.removePreference(findPreference(PREF_HEADPHONE_GAIN));
-        }
-        // Mic Gain
-        if (FileUtils.fileWritable(MIC_GAIN_PATH)) {
            CustomSeekBarPreference micGain = (CustomSeekBarPreference) findPreference(PREF_MIC_GAIN);
            micGain.setOnPreferenceChangeListener(this);
         } else {
-          audioCategory.removePreference(findPreference(PREF_MIC_GAIN));
-        }
-        // Access to Dirac
-        if (isAppNotInstalled(DIRAC_PACKAGE_NAME)) {
-            audioCategory.removePreference(findPreference(PREF_DIRAC));
+          getPreferenceScreen().removePreference(findPreference(CATEGORY_AUDIO_AMPLIFY));
         }
 
         PreferenceCategory displayCategory = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
