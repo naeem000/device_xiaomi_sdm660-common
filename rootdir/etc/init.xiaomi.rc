@@ -50,3 +50,79 @@ service vendor.cdsprpcd /vendor/bin/cdsprpcd
     user system
     group system
     disabled
+
+service esepmdaemon /system/vendor/bin/esepmdaemon
+    override
+    class core
+    user system
+    group nfc
+    disabled
+
+service ptt_socket_app /system/vendor/bin/ptt_socket_app -d
+    override
+    class main
+    user wifi
+    group wifi system inet net_admin
+    capabilities NET_ADMIN
+    oneshot
+    disabled
+
+service vm_bms /vendor/bin/vm_bms
+    override
+    class main
+    user root
+    group system wakelock
+    disabled
+
+service nqnfcinfo /system/vendor/bin/nqnfcinfo
+    override
+    class late_start
+    group nfc
+    user system
+    oneshot
+    disabled
+
+service qvop-daemon /vendor/bin/qvop-daemon
+    override
+    class late_start
+    user system
+    group system drmrpc
+    disabled
+
+service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
+    override
+    class late_start
+    user system
+    group system
+    disabled
+
+service chre /vendor/bin/chre
+    override
+    class late_start
+    user system
+    group system
+    socket chre seqpacket 0660 root system
+    shutdown critical
+    disabled
+
+service audiod /system/vendor/bin/audiod
+    override
+    class late_start
+    user system
+    group system
+    disabled
+
+service mdtpd /system/vendor/bin/mdtpd
+    override
+    class late_start
+    user root
+    group system radio drmrpc
+    disabled
+
+service seempd /system/bin/seempd
+    override
+    class late_start
+    user system
+    group system sdcard_rw
+    socket seempdw dgram 0666 system system
+    disabled
