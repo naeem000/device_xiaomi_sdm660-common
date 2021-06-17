@@ -1,0 +1,32 @@
+[
+  {
+    "remote"      : "github",
+    "repository"  : "xiaomi-sdm660/android_kernel_xiaomi_sdm660",
+    "target_path" : "kernel/xiaomi/sdm660",
+    "branch"      : "11.0-eas"
+  },
+  {
+    "remote"      : "github",
+    "repository"  : "TechWiz007/hardware_qcom-caf_audio_msm8998",
+    "target_path" : "hardware/qcom-caf/msm8998-jasmine/audio",
+    "branch"      : "11"
+  },
+  {
+    "remote"      : "github",
+    "repository"  : "TechWiz007/hardware_qcom-caf_display_msm8998",
+    "target_path" : "hardware/qcom-caf/msm8998-jasmine/display",
+    "branch"      : "11"
+  },
+  {
+    "remote"      : "github",
+    "repository"  : "TechWiz007/hardware_qcom-caf_media_msm8998",
+    "target_path" : "hardware/qcom-caf/msm8998-jasmine/media",
+    "branch"      : "11"
+  },
+  {
+    "remote"      : "github",
+    "repository"  : "TechWiz007/vendor_xiaomi_dirac",
+    "target_path" : "vendor/xiaomi/dirac",
+    "branch"      : "11x"
+  }
+]
