@@ -167,7 +167,6 @@ PRODUCT_COPY_FILES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    init.goodix.sh \
     init.qcom.sensors.sh \
     init.qti.dcvs.sh \
     init.target_ota.rc \

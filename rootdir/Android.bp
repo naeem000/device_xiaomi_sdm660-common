@@ -13,12 +13,6 @@
 // limitations under the License.
 
 sh_binary {
-    name: "init.goodix.sh",
-    src: "bin/init.goodix.sh",
-    vendor: true,
-}
-
-sh_binary {
     name: "init.qcom.sensors.sh",
     src: "bin/init.qcom.sensors.sh",
     vendor: true,
