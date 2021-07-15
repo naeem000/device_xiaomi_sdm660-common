@@ -62,26 +62,24 @@ public class DeviceSettings extends PreferenceFragment implements
     private static final String PREF_DEVICE_DOZE = "device_doze";
     private static final String PREF_DEVICE_KCAL = "device_kcal";
 
-    public static final String PREF_THERMAL = "thermal";
-    public static final String THERMAL_PATH = "/sys/devices/virtual/thermal/thermal_message/sconfig";
-
     private static final String DEVICE_DOZE_PACKAGE_NAME = "com.advanced.settings.doze";
 
     private static final String DEVICE_JASON_PACKAGE_NAME = "org.lineageos.settings.devicex";
     private static final String PREF_DEVICE_JASON = "device_jason";
 
-    private SecureSettingListPreference mTHERMAL;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.preferences_xiaomi_parts, rootKey);
-        
+
+        // LED Brightness        
         if (FileUtils.fileWritable(NOTIF_LED_PATH)) {
             NotificationLedSeekBarPreference notifLedBrightness =
                     (NotificationLedSeekBarPreference) findPreference(PREF_NOTIF_LED);
             notifLedBrightness.setOnPreferenceChangeListener(this);
         } else { getPreferenceScreen().removePreference(findPreference(CATEGORY_NOTIF)); }
 
+        // Haptic Strength
         if (FileUtils.fileWritable(VIBRATION_STRENGTH_PATH)) {
             VibrationSeekBarPreference vibrationStrength = (VibrationSeekBarPreference) findPreference(PREF_VIBRATION_STRENGTH);
             vibrationStrength.setOnPreferenceChangeListener(this);
@@ -96,31 +94,26 @@ public class DeviceSettings extends PreferenceFragment implements
         } else {
           getPreferenceScreen().removePreference(findPreference(CATEGORY_AUDIO_AMPLIFY));
         }
-
+        // Display Category
         PreferenceCategory displayCategory = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
+        // Doze
         if (isAppNotInstalled(DEVICE_DOZE_PACKAGE_NAME)) {
             displayCategory.removePreference(findPreference(PREF_DEVICE_DOZE));
         }
-
+        // Jason Settings
         if (isAppNotInstalled(DEVICE_JASON_PACKAGE_NAME)) {
             displayCategory.removePreference(findPreference(PREF_DEVICE_JASON));
         }
-        
+        //FPS Info        
         SecureSettingSwitchPreference fpsInfo = (SecureSettingSwitchPreference) findPreference(PREF_KEY_FPS_INFO);
         fpsInfo.setOnPreferenceChangeListener(this);
-
+        // KCAL
         Preference kcal = findPreference(PREF_DEVICE_KCAL);
-
         kcal.setOnPreferenceClickListener(preference -> {
             Intent intent = new Intent(getActivity().getApplicationContext(), KCalSettingsActivity.class);
             startActivity(intent);
             return true;
         });
-
-        mTHERMAL = (SecureSettingListPreference) findPreference(PREF_THERMAL);
-        mTHERMAL.setValue(FileUtils.getValue(THERMAL_PATH));
-        mTHERMAL.setSummary(mTHERMAL.getEntry());
-        mTHERMAL.setOnPreferenceChangeListener(this);
 
     }
 
@@ -143,12 +136,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
             case PREF_MIC_GAIN:
                 FileUtils.setValue(MIC_GAIN_PATH, (int) value);
-                break;
-
-            case PREF_THERMAL:
-                mTHERMAL.setValue((String) value);
-                mTHERMAL.setSummary(mTHERMAL.getEntry());
-                FileUtils.setValue(THERMAL_PATH, (String) value);
                 break;
 
             case PREF_KEY_FPS_INFO:
