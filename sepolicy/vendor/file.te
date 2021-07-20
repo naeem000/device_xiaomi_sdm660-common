@@ -3,6 +3,7 @@ type vendor_sysfs_dt2w, sysfs_type, fs_type;
 
 # Fingerprint
 type goodix_data_file, file_type, data_file_type, core_data_file_type;
+type sysfs_fingerprint, fs_type, sysfs_type;
 
 # HVDCP
 type vendor_sysfs_hvdcp, fs_type, sysfs_type;

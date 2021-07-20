@@ -6,6 +6,12 @@ genfscon sysfs /devices/platform/soc/ca0c000.qcom,cci/ca0c000.qcom,cci:qcom,came
 # DT2W
 genfscon sysfs /touchpanel/double_tap   u:object_r:vendor_sysfs_dt2w:s0
 
+# Fingerprint
+genfscon sysfs /devices/soc/soc:fpc1020/device_prepare                          u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/soc/soc:fpc1020/fingerdown_wait                         u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/soc/soc:fpc1020/irq                                     u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/soc/soc:fpc1020/wakeup_enable                           u:object_r:sysfs_fingerprint:s0
+
 # Graphics
 genfscon sysfs /class/lcd_bias/secure_mode  u:object_r:sysfs_graphics:s0
 
