@@ -74,7 +74,7 @@ on post-fs-data
     rm /data/vendor/fpc/user.db
 
 on boot
-    start rmt_storage
+    start vendor.rmt_storage
     start rfs_access
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/foreground/cpus 0-7
