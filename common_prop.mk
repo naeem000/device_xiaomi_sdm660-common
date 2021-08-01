@@ -177,8 +177,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196610 \
     vendor.display.disable_skip_validate=1 \
     vendor.gralloc.enable_fb_ubwc=1 \
-    vendor.display.enable_default_color_mode=0
+    vendor.display.enable_default_color_mode=0 \
+    vendor.opengles.version=196610 \
+    dev.pm.dyn_samplingrate=1 \
+    persist.demo.hdmirotationlock=false \
+    ro.opengles.version=196610 \
+    ro.vendor.display.cabl=2 \
+    vendor.display.enable_default_color_mode=1
 
+# GPS
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.backup.ntpServer="0.pool.ntp.org" \
+    persist.vendor.overlay.izat.optin=rro
+    
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.egl=adreno \
