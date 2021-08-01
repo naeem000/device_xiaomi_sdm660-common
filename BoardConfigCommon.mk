@@ -40,8 +40,12 @@ BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
 endif
 
-# APEX image
+# Apex
+ifeq ($(ENABLE_APEX), true)
 DEXPREOPT_GENERATE_APEX_IMAGE := true
+else
+OVERRIDE_TARGET_FLATTEN_APEX := true
+endif
 
 # Architecture
 TARGET_ARCH := arm64

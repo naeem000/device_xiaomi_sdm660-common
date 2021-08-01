@@ -69,6 +69,11 @@ endif
 PRODUCT_PACKAGES += \
     com.dsi.ant@1.0.vendor
 
+# Apex
+ifeq ($(ENABLE_APEX), true)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+endif
+
 # Audio
 $(call inherit-product, vendor/qcom/opensource/audio-hal/primary-hal/configs/sdm660/sdm660.mk)
 
