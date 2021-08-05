@@ -242,6 +242,11 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_ODM_PROPERTIES += \
     ro.vendor.qti.va_odm.support=1
 
+# Power Saver
+PRODUCT_PROPERTY_OVERRIDES += \
+    power.saving.mode=1 \
+    pm.sleep_mode=1
+
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.data.mode=concurrent \
@@ -257,6 +262,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=9,9 \
     ro.telephony.iwlan_operation_mode=legacy \
     ro.vendor.use_data_netmgrd=true \
+    ro.vold.umsdirtyratio=20 \
+    ro.ril.disable.power.collapse=0
     persist.vendor.radio.add_power_save=1
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
