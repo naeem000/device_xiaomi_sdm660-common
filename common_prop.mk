@@ -1,6 +1,7 @@
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.vc_call_vol_steps=7 \
+    vendor.audio.feature.compr_voip.enable=true \
     vendor.audio.feature.spkr_prot.enable=false \
     vendor.audio.feature.ssrec.enable=false
 
