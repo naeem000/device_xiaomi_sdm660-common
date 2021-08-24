@@ -100,6 +100,9 @@ TARGET_BOARD_PLATFORM := sdm660
 # Build Rules
 BUILD_BROKEN_DUP_RULES := true
 
+# Battery Saver
+TARGET_POWERHAL_MODE_EXT := $(COMMON_PATH)/power-libperfmgr/power/power-mode.cpp
+
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_USES_QTI_CAMERA_DEVICE := true
