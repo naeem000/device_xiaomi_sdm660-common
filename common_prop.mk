@@ -245,7 +245,7 @@ PRODUCT_ODM_PROPERTIES += \
 # Power Saver
 PRODUCT_PROPERTY_OVERRIDES += \
     power.saving.mode=1 \
-    pm.sleep_mode=1
+    pm.sleep_mode=1 \
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -263,13 +263,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.iwlan_operation_mode=legacy \
     ro.vendor.use_data_netmgrd=true \
     ro.vold.umsdirtyratio=20 \
-    ro.ril.disable.power.collapse=0
-    persist.vendor.radio.add_power_save=1
+    ro.ril.disable.power.collapse=0 \
+    persist.vendor.radio.add_power_save=1 \
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     DEVICE_PROVISIONED=1 \
     ril.subscription.types=NV,RUIM \
-    telephony.lteOnCdmaDevice=1
+    telephony.lteOnCdmaDevice=1 \
+    persist.vendor.radio.aosp_usr_pref_sel=true \
 
 # Rendering
 PRODUCT_PROPERTY_OVERRIDES += \
