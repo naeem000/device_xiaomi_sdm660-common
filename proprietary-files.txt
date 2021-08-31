@@ -482,8 +482,88 @@ vendor/bin/pd-mapper|39d55e771fd5f59a94e9bbc94a16e93b8b325ba2
 vendor/lib64/libpdmapper.so|ad1638f4461d6c133b066305d567f156775c9471
 vendor/lib64/libpdnotifier.so|4c3437efb631e34e653bed2722b0ea97a29d3f82
 
+# Perf - from LA.QSSI.11.0.r1-11600-qssi.0
+system_ext/lib/libbeluga.so|879ed469e4a98c6bd5d3379b9786e0f30b1518e1
+system_ext/lib/libcomposerextn.qti.so|21263ffd604f45614db46bf65dcab36c4bc9dfc5
+system_ext/lib/libdolphin.so|4982c340b218f24e1cdf3173aa2e1d80b54ec305
+system_ext/lib/libframeextension.so|38b495ecadd2343c2197dd88b298fcffad857b32
+system_ext/lib/liblayerext.qti.so|94dc314da06e90fc956c9f21d1d2b41c0466ae9c
+system_ext/lib/libskewknob_system.so|f9f4d5d36142cd43f0f531314264a3ebbfff7dd1
+system_ext/lib/libsmomo.qti.so|ae3c2ccc4dccde127699f127bed7777ae55b312a
+system_ext/lib/libsmomoconfig.qti.so|3acd481474298e3861e78b494d526b876319c7e3
+system_ext/lib64/libbeluga.so|2c327f37e9eebed975472adb37f62024cae24161
+system_ext/lib64/libcomposerextn.qti.so|f1da47dd1bc1c97ecbcf7bac0e22c7110fde4cfd
+system_ext/lib64/libdolphin.so|615205f399e8b4bd5a20f43ea8fdc508a97121c5
+system_ext/lib64/libframeextension.so|1455365aa0b5e5c7d2a571c3fe7946d72d55929c
+system_ext/lib64/liblayerext.qti.so|fa96d3ed13ce5f26ddd129ac79aa78f655bb2ed1
+system_ext/lib64/libskewknob_system.so|5e4454af886e09c82e0260476eda8a2cef0d3404
+system_ext/lib64/libsmomo.qti.so|7dda424db36e3188af078b0524c4b6fb88494da0
+system_ext/lib64/libsmomoconfig.qti.so|9fe0f9f1d24ee61e08e1728216d144a4e54489b3
+
+# Perf - from LA.QSSI.11.0.r1-11600-qssi.0-AOSPA
+etc/permissions/com.qualcomm.qti.Performance.xml|7976f2fd46b8d07814310cc957a70f829bdd6932
+etc/permissions/com.qualcomm.qti.UxPerformance.xml|d92749d80c5d956db8251b08ea6388d3f107a32c
+-framework/QPerformance.jar|3ea4b9443c481a5a0ab18d74db663007f02e50e6
+-framework/UxPerformance.jar|ab0f4a328d2df34a593819ca73ef1ed28299c247
+system_ext/bin/perfservice|ce6aa18fb5af084c1504a5b9bb6f2de5f9f1e6fb
+system_ext/etc/init/perfservice.rc|7d4732437d2204e06ea09db85f169fef693086e8
+system_ext/etc/seccomp_policy/perfservice.policy|579d2f1b36b98aee30594d2e955552e4dd18ed87
+system_ext/lib/libqti-at.so|c97cf7586ff1cc7432bd67ce70aed05b9ffa6c4d
+system_ext/lib/libqti-iopd-client_system.so|0721f8b5f6d1a3d01f3fa9ffa396553d27f61fb5
+system_ext/lib/libqti-perfd-client_system.so|4a100cad56d93db1ce4703af024665db5c899340
+system_ext/lib/libqti-util_system.so|5c5a28b1277534d8fdb65c3330cf6c569fcb99ce
+system_ext/lib/libqti_performance.so|3f4def32497475e3777f7eb56af57054773a1d03
+system_ext/lib/vendor.qti.hardware.iop@2.0.so|a0f70f3ef8908cd63c0bd3898ff7c1582058a504
+system_ext/lib/vendor.qti.hardware.perf@2.0.so|6f9df89cae687f465c90e971826ea897ba377e7f
+system_ext/lib/vendor.qti.hardware.perf@2.1.so|4325fef61ca68277c357249a8da2f19dc49a68cd
+system_ext/lib/vendor.qti.hardware.perf@2.2.so|08eae112ccbac133b0b4584fc260f4e55483fed9
+system_ext/lib64/libqti-at.so|1da20c089449c4131b71e258ff2b9d97dc699b11
+system_ext/lib64/libqti-iopd-client_system.so|c8bcf543f1fa04b1f26202a92fd573742b29acf0
+system_ext/lib64/libqti-perfd-client_system.so|7d443adf408bce4a27794983fe0e921c332df98f
+system_ext/lib64/libqti-util_system.so|8fd64e99785fe01d97ccbda5b434d8aa1769709d
+system_ext/lib64/libqti_performance.so|44f6e85bd04ae34edf1343e8f3baf400b80da479
+system_ext/lib64/vendor.qti.hardware.iop@2.0.so|764f17200d578446fcc0189a77a7dcac84092f7e
+system_ext/lib64/vendor.qti.hardware.perf@2.0.so|3da2306f527e067a1a7dc680e9eeaacf782a3fea
+system_ext/lib64/vendor.qti.hardware.perf@2.1.so|5236d0e0822dd4ff3f47e38ad620fd665fa18378
+system_ext/lib64/vendor.qti.hardware.perf@2.2.so|40c55070056b18a2c1df384077bb235d9eca4a18
+vendor/lib/vendor.qti.hardware.perf@2.0.so|33d74e19d88fde966571385a2d9004614d403aeb
+vendor/lib/vendor.qti.hardware.perf@2.1.so|ddaf181949ce53d1783d8599ca6d8d01591630d3
+vendor/lib/vendor.qti.hardware.perf@2.2.so|0842a59fec176c420b3b34437118c6fdb0e88144
+vendor/lib/vendor.qti.memory.pasrmanager@1.0.so|ad1824ac513a519929e56ce60b56d6935b052664
+vendor/lib/vendor.qti.memory.pasrmanager@1.1.so|abf6b12adca4a10c029537c7d73736ea47d8a975
+vendor/lib64/vendor.qti.hardware.perf@2.0.so|d25ecde3a1993af5d504ce6ed0b8cfdb1180f518
+vendor/lib64/vendor.qti.hardware.perf@2.1.so|834862cf31ca29cde22ef821f353e48af6b133fa
+vendor/lib64/vendor.qti.hardware.perf@2.2.so|260b6b9b14b659f5ae5275a4f458f7059546ce92
+vendor/lib64/vendor.qti.memory.pasrmanager@1.0.so|05c8f67ed74facb73b8fc5af328c0c5fba6e3e70
+vendor/lib64/vendor.qti.memory.pasrmanager@1.1.so|b8e458a86da5778259f6262b7691062a236d336a
+
 # Perf - from LA.UM.8.2.r1-07500-sdm660.0
 vendor/bin/energy-awareness|d30082c491a02582ee281fe7fe9e71eba9708858
+
+# Perf - from LA.UM.9.11.r1-03900-NICOBAR.0
+vendor/bin/msm_irqbalance|b075c2f4092c175950a2c26d19bf2013e2efd6d5
+
+# Perf - from LA.UM.9.11.r1-03900-NICOBAR.0-AOSPA
+vendor/bin/hw/vendor.qti.hardware.perf@2.2-service|69503a6d63fbf41aa2f6ea41fd5f038c25adf3ee
+vendor/etc/init/vendor.qti.hardware.perf@2.2-service.rc|459b4c23550a56ac545f78c6d391f3d7dd9ba45b
+vendor/etc/perf/commonresourceconfigs.xml|2f7521ad0c0b0bb472c747c0c2176b21492936ab
+vendor/etc/perf/commonsysnodesconfigs.xml|77ea36edec83f67f5c5591f36bd0f75e361db097
+vendor/etc/perf/perfboostsconfig.xml|1b925efc5be95c1fbcec228a609ffa59b1f6ecc9
+vendor/etc/perf/perfconfigstore.xml|7aed790478c9796246ea7c4b3bb6f7d31172ecb3
+vendor/etc/perf/targetconfig.xml|376ae331df9d6c30b6208f25d04ae4ea11c0e2ea
+vendor/etc/perf/targetresourceconfigs.xml|50eb2e60eb50a1d27b476c7aeb98ecb612df7eee
+vendor/lib/libperfconfig.so|cd1848c167e420c5f036094996115583533498f3
+vendor/lib/libperfgluelayer.so|ae4834f9557938b83b5d84342fb70d4c947c9e78
+vendor/lib/libperfioctl.so|0841bf4c0f8fb1985c5a88b42f902bbc5afd905f
+vendor/lib/libqti-perfd-client.so|4544aeedc63a8a3c898bdcfd13b03be694b0df9a
+vendor/lib/libqti-perfd.so|c19db2c1c3c23311534f9ea3e413baa1f0573f14
+vendor/lib/libqti-util.so|bf6768f1993f7e8befc0cdc52fc8bfd787a42f73
+vendor/lib64/libperfconfig.so|712f865464eb6276b339aabbe1a160e2e762ae52
+vendor/lib64/libperfgluelayer.so|51b00aa67ab68118f90decef7768e1f114664daf
+vendor/lib64/libperfioctl.so|ae706dd66821da508f7046319132d542b2ae62e3
+vendor/lib64/libqti-perfd-client.so|9bc120fd8ca661d300b8679b1f3b77536a880b11
+vendor/lib64/libqti-perfd.so|aac7cd9bce5f26f22719d06eb53d047741ea76c0
+vendor/lib64/libqti-util.so|b8f645077b4577fa062cfb91c93a3a80732120ee
 
 # Peripheral Manager - from LA.UM.9.11.r1-03900-NICOBAR.0
 vendor/bin/pm-proxy|6cfaaf498d9360af9d7c9e4675a1dc209454fe24
@@ -589,6 +669,13 @@ vendor/lib64/libsystem_health_mon.so|71619901e66cbf2f4ec5c662ae2bd3e426363e20
 # RemoteFS - from LA.UM.9.11.r1-03900-NICOBAR.0-AOSPA
 vendor/bin/rmt_storage|2633a072880c39df55f1ba1225438a79911a42e3
 vendor/etc/init/vendor.qti.rmt_storage.rc|bc212c6353c2ded44ae4d759605fbbe55aa4fa3f
+
+# Service tracker - from LA.UM.9.11.r1-03900-NICOBAR.0-AOSPA
+vendor/bin/hw/vendor.qti.hardware.servicetracker@1.2-service|287f6523ace482172220205053445aac3447f860
+vendor/etc/init/vendor.qti.hardware.servicetracker@1.2-service.rc|7cf06148da895586c20aab7e6bd01b806d8128b6
+-vendor/etc/vintf/manifest/vendor.qti.hardware.servicetracker@1.2-service.xml|40b6abd9b4be99dc5722eb60d71ee36764bf4ef3
+vendor/lib/hw/vendor.qti.hardware.servicetracker@1.2-impl.so|a57bd943ae69f27dc510cf4419de55cdf8b3d745
+vendor/lib64/hw/vendor.qti.hardware.servicetracker@1.2-impl.so|237f846b9e8183b5ee5b186409b7a1fdfc47cf52
 
 # SMC Invoke - from LA.UM.9.11.r1-03900-NICOBAR.0
 vendor/lib64/libminkdescriptor.so|9c8cae26e9d9e2a9b18f1ec8c153696aa7a5c885

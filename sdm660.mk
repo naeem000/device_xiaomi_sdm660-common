@@ -243,6 +243,13 @@ PRODUCT_PACKAGES += \
     SDM660Telephony \
     SDM660Wifi
 
+# Perf
+PRODUCT_PACKAGES += \
+    init.aospa.perf.rc
+
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/perf/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -278,7 +285,6 @@ TARGET_COMMON_QTI_COMPONENTS += \
     gps \
     init \
     overlay \
-    perf \
     telephony \
     usb \
     wfd-legacy
@@ -306,9 +312,14 @@ PRODUCT_COPY_FILES += \
 # Security Patch
 BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
+# Service tracker
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.servicetracker@1.2.vendor
+
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
-    $(COMMON_PATH)
+    $(COMMON_PATH) \
+    device/qcom/common/perf
 
 # Vibrator
 PRODUCT_PACKAGES += \

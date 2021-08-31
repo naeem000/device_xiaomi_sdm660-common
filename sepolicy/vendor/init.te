@@ -2,5 +2,3 @@ allow init {
     bt_firmware_file
     firmware_file
 }:filesystem getattr;
-
-# dontaudit init vendor_poweroptservice_exec:{ execute execute_no_trans }
