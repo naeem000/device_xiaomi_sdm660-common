@@ -1,0 +1,40 @@
+// Copyright (C) 2021 Paranoid Android
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+soong_config_module_type_import {
+    from: "device/xiaomi/sdm660-common/Android.bp",
+    module_types: ["sdm660_cc_defaults"],
+}
+
+sdm660_cc_defaults {
+    name: "lights.qcom_default",
+    relative_install_path: "hw",
+    proprietary: true,
+    vendor: true,
+    soong_config_variables: {
+        kernel: {
+            v4_4: {
+                srcs: ["lights_legacy.c"],
+            },
+        },
+    },
+    shared_libs: ["liblog"],
+    header_libs: ["libhardware_headers"],
+    cflags: ["-DLOG_TAG=\"qdlights\""],
+}
+
+cc_library_shared {
+    name: "lights.qcom",
+    defaults: ["lights.qcom_default"],
+}
