@@ -27,6 +27,9 @@ sdm660_cc_defaults {
             v4_4: {
                 srcs: ["lights_legacy.c"],
             },
+            v4_19: {
+                srcs: ["lights.c"],
+            },
         },
     },
     shared_libs: ["liblog"],
