@@ -116,6 +116,11 @@ LOC_HIDL_VERSION := 4.0
 
 # HIDL
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/configs/vintf/manifest.xml
+ifeq ($(TARGET_KERNEL_VERSION),4.19)
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/manifest_target_level_4.xml
+else
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/manifest_target_level_3.xml
+endif
 ifeq ($(filter vibrator,$(TARGET_COMMON_QTI_COMPONENTS)),)
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/manifest_vibrator.xml
 endif
