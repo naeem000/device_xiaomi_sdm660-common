@@ -1,2 +1,18 @@
 soong_namespace {
 }
+
+soong_config_module_type {
+    name: "sdm660_cc_defaults",
+    module_type: "cc_defaults",
+    config_namespace: "sdm660-common",
+    variables: ["kernel"],
+    properties: ["srcs"],
+}
+
+soong_config_string_variable {
+    name: "kernel",
+    values: [
+        "v4_4",
+        "v4_19",
+    ],
+}

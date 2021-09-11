@@ -185,6 +185,11 @@ BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 # SELinux
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
+# Soong
+SOONG_CONFIG_NAMESPACES += sdm660-common
+SOONG_CONFIG_sdm660-common := kernel
+SOONG_CONFIG_sdm660-common_kernel := v$(subst .,_,$(TARGET_KERNEL_VERSION))
+
 # Symlinks
 TARGET_MOUNT_POINTS_SYMLINKS := true
 
