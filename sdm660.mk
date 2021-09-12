@@ -108,10 +108,6 @@ PRODUCT_PACKAGES += \
 # Board
 TARGET_BOARD_PLATFORM := sdm660
 
-# Broadcastradio
-PRODUCT_PACKAGES += \
-    android.hardware.broadcastradio@1.0-impl
-
 # Camera
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0 \
