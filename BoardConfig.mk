@@ -17,6 +17,7 @@ BUILD_BROKEN_DUP_RULES := true
 
 # Platform
 TARGET_BOARD_PLATFORM := sdm660
+TARGET_USES_UM_4_19 := true
 
 # Architecture
 TARGET_ARCH := arm64
