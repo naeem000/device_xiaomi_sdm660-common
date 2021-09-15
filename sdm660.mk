@@ -184,6 +184,11 @@ PRODUCT_PACKAGES += \
     init.xiaomi.rc \
     ueventd.xiaomi.rc
 
+ifeq ($(TARGET_KERNEL_VERSION),4.19)
+PRODUCT_PACKAGES += \
+    init.xiaomi_4_19.rc
+endif
+
 # Ion
 PRODUCT_PACKAGES += \
     libion
