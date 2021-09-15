@@ -327,15 +327,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
     </hal>
     <hal format="hidl">
-        <name>vendor.qti.esepowermanager</name>
-        <transport>hwbinder</transport>
-        <version>1.1</version>
-        <interface>
-            <name>IEsePowerManager</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
         <name>vendor.qti.hardware.alarm</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -536,15 +527,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <name>IUimRemoteServiceServer</name>
             <instance>uimRemoteServer0</instance>
             <instance>uimRemoteServer1</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.hardware.soter</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISoter</name>
-            <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl">
