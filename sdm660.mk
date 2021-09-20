@@ -410,8 +410,6 @@ PRODUCT_PACKAGES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(COMMON_PATH)/overlay \
-    $(COMMON_PATH)/overlay-ssos \
-    $(COMMON_PATH)/overlay-lineage
 
 # RRO configuration
 TARGET_USES_RRO := true
