@@ -363,6 +363,9 @@ on post-fs-data
 
     #Create dir for TUI
     mkdir /data/vendor/tui 0700 system drmrpc
+	
+    start vendor.qcrild
+    start vendor.qcrild2
 
 on property:ro.vendor.iocgrp.config=1
     mkdir /dev/blkio
@@ -424,15 +427,6 @@ on property:vendor.radio.atfwd.start=false
 
 on property:vendor.media.target.version=*
     setprop vendor.sys.media.target.version ${vendor.media.target.version}
-
-service qcom-c_main-sh /vendor/bin/init.class_main.sh
-    class main
-    user root
-    group root system
-    oneshot
-
-on property:vold.decrypt=trigger_restart_framework
-    start qcom-c_main-sh
 
 #on property:persist.env.fastdorm.enabled=true
 #    setprop persist.radio.data_no_toggle 1
@@ -517,20 +511,6 @@ service vendor.atfwd /vendor/bin/ATFWD-daemon
 #on property:ro.data.large_tcp_window_size=true
 #    # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
 #    write /proc/sys/net/ipv4/tcp_adv_win_scale  2
-
-service vendor.ril-daemon2 /vendor/bin/hw/rild -c 2
-    class main
-    user radio
-    disabled
-    group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2901 log
-    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
-
-service vendor.ril-daemon3 /vendor/bin/hw/rild -c 3
-    class main
-    user radio
-    disabled
-    group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2901 log
-    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
 service charger /system/bin/charger
     class charger
