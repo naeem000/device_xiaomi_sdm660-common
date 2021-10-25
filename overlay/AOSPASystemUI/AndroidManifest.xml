@@ -15,7 +15,7 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.systemui.overlay.pa.sdm660"
+    package="com.android.systemui.overlay.aospa.sdm660"
     android:versionCode="1"
     android:versionName="1.0">
 

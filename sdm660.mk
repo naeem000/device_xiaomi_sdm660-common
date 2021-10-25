@@ -144,7 +144,7 @@ endif
 
 # DLKM
 KERNEL_MODULES_INSTALL := dlkm
-KERNEL_MODULES_OUT := $(OUT_DIR)/target/product/$(PA_BUILD)/$(KERNEL_MODULES_INSTALL)/lib/modules
+KERNEL_MODULES_OUT := $(OUT_DIR)/target/product/$(AOSPA_BUILD)/$(KERNEL_MODULES_INSTALL)/lib/modules
 
 # Doze
 PRODUCT_PACKAGES += \
