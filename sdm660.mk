@@ -300,8 +300,7 @@ TARGET_COMMON_QTI_COMPONENTS += \
     init \
     overlay \
     telephony \
-    usb \
-    wfd-legacy
+    usb
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
