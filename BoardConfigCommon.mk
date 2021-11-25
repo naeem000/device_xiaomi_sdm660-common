@@ -126,7 +126,7 @@ LOC_HIDL_VERSION := 4.0
 # HIDL
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/configs/vintf/manifest.xml
 ifeq ($(TARGET_KERNEL_VERSION),4.19)
-DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/manifest_target_level_4.xml
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/manifest_target_level_5.xml
 else
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/manifest_target_level_3.xml
 endif
