@@ -335,6 +335,10 @@ PRODUCT_COPY_FILES += \
 # Security Patch
 BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
+# SF ConfigStore
+PRODUCT_PACKAGES += \
+    disable_configstore
+
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
     $(COMMON_PATH) \
