@@ -31,7 +31,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.enable_hwc_vds=1 \
     debug.sf.hw=1 \
-    debug.sf.latch_unsignaled=1 \
     persist.hwc.enable_vds=1 \
     ro.qualcomm.cabl=0 \
     vendor.display.disable_skip_validate=1 \
