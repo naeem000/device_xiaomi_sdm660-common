@@ -6,6 +6,3 @@ type goodix_data_file, file_type, data_file_type, core_data_file_type;
 
 # HVDCP
 type vendor_sysfs_hvdcp, fs_type, sysfs_type;
-
-# Perf
-type vendor_sysfs_system_memory, sysfs_type, fs_type;

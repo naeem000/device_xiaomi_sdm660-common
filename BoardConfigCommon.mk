@@ -100,9 +100,6 @@ BOARD_VENDOR := xiaomi
 # Build Rules
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
-ifeq ($(IS_BRINGUP),true)
-BUILD_BROKEN_TREBLE_SYSPROP_NEVERALLOW := true
-endif
 
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
@@ -141,14 +138,8 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 androidboot.console=ttyMSM0 earlycon=msm_serial_dm,0xc170000 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 androidboot.configfs=true androidboot.usbcontroller=a800000.dwc3
 ifeq ($(TARGET_KERNEL_VERSION),4.19)
 BOARD_KERNEL_CMDLINE += printk.devkmsg=on
-ifneq ($(IS_BRINGUP),true)
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-endif
 else
 BOARD_KERNEL_CMDLINE += swiotlb=1
-endif
-ifeq ($(IS_BRINGUP),true)
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 endif
 BOARD_KERNEL_CMDLINE += usbcore.autosuspend=7
 BOARD_KERNEL_CMDLINE += loop.max_part=7
@@ -191,13 +182,7 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # SELinux
-ifeq ($(IS_BRINGUP),true)
-SELINUX_IGNORE_NEVERALLOWS := true
-BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy-basic/vendor
-SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy-basic/public
-else
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
-endif
 
 # Soong
 SOONG_CONFIG_NAMESPACES += sdm660-common
