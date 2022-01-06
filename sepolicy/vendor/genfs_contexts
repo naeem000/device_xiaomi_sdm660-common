@@ -7,14 +7,32 @@ genfscon sysfs /devices/platform/soc/ca0c000.qcom,cci/ca0c000.qcom,cci:qcom,came
 genfscon sysfs /touchpanel/double_tap   u:object_r:vendor_sysfs_dt2w:s0
 
 # Fingerprint
+# for 4.4
 genfscon sysfs /devices/soc/soc:fpc1020/device_prepare                          u:object_r:sysfs_fingerprint:s0
 genfscon sysfs /devices/soc/soc:fpc1020/fingerdown_wait                         u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/soc/soc:fpc1020/hw_reset                                u:object_r:sysfs_fingerprint:s0
 genfscon sysfs /devices/soc/soc:fpc1020/irq                                     u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/soc/soc:fpc1020/regulator_enable                        u:object_r:sysfs_fingerprint:s0
 genfscon sysfs /devices/soc/soc:fpc1020/wakeup_enable                           u:object_r:sysfs_fingerprint:s0
 genfscon sysfs /devices/soc/soc:goodix_fp/device_prepare                        u:object_r:sysfs_fingerprint:s0
 genfscon sysfs /devices/soc/soc:goodix_fp/fingerdown_wait                       u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/soc/soc:goodix_fp/hw_reset                              u:object_r:sysfs_fingerprint:s0
 genfscon sysfs /devices/soc/soc:goodix_fp/irq                                   u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/soc/soc:goodix_fp/regulator_enable                      u:object_r:sysfs_fingerprint:s0
 genfscon sysfs /devices/soc/soc:goodix_fp/wakeup_enable                         u:object_r:sysfs_fingerprint:s0
+# for 4.19
+genfscon sysfs /devices/platform/soc/soc:fpc1020/device_prepare                 u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/soc/soc:fpc1020/fingerdown_wait                u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/soc/soc:fpc1020/hw_reset                       u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/soc/soc:fpc1020/irq                            u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/soc/soc:fpc1020/regulator_enable               u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/soc/soc:fpc1020/wakeup_enable                  u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/soc/soc:goodix_fp/device_prepare               u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/soc/soc:goodix_fp/fingerdown_wait              u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/soc/soc:goodix_fp/hw_reset                     u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/soc/soc:goodix_fp/irq                          u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/soc/soc:goodix_fp/regulator_enable             u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/soc/soc:goodix_fp/wakeup_enable                u:object_r:sysfs_fingerprint:s0
 
 # Graphics
 genfscon sysfs /class/lcd_bias/secure_mode  u:object_r:sysfs_graphics:s0
