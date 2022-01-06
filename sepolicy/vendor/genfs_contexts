@@ -11,6 +11,10 @@ genfscon sysfs /devices/soc/soc:fpc1020/device_prepare                          
 genfscon sysfs /devices/soc/soc:fpc1020/fingerdown_wait                         u:object_r:sysfs_fingerprint:s0
 genfscon sysfs /devices/soc/soc:fpc1020/irq                                     u:object_r:sysfs_fingerprint:s0
 genfscon sysfs /devices/soc/soc:fpc1020/wakeup_enable                           u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/soc/soc:goodix_fp/device_prepare                        u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/soc/soc:goodix_fp/fingerdown_wait                       u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/soc/soc:goodix_fp/irq                                   u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/soc/soc:goodix_fp/wakeup_enable                         u:object_r:sysfs_fingerprint:s0
 
 # Graphics
 genfscon sysfs /class/lcd_bias/secure_mode  u:object_r:sysfs_graphics:s0
