@@ -27,6 +27,7 @@
 #
 #
 
+import /vendor/etc/init/hw/init.msm.usb.configfs.rc
 import /vendor/etc/init/hw/init.target_dap.rc
 import /vendor/etc/init/hw/init.target_ota.rc
 

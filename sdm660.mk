@@ -181,6 +181,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     init.qcom.sensors.sh \
     init.qti.dcvs.sh \
+    init.msm.usb.configfs.rc \
     init.target_ota.rc \
     init.target.rc \
     init.xiaomi.rc \

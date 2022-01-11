@@ -25,6 +25,13 @@ sh_binary {
 }
 
 prebuilt_etc {
+    name: "init.msm.usb.configfs.rc",
+    src: "etc/init.msm.usb.configfs.rc",
+    vendor: true,
+    sub_dir: "init/hw",
+}
+
+prebuilt_etc {
     name: "init.target_ota.rc",
     src: "etc/init.target_ota.rc",
     sub_dir: "init/hw",
