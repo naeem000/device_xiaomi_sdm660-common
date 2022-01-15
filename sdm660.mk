@@ -308,9 +308,9 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    android.hardware.radio.config@1.2.vendor:64 \
+    android.hardware.radio.config@1.3.vendor:64 \
     android.hardware.radio.deprecated@1.0.vendor:64 \
-    android.hardware.radio@1.5.vendor:64 \
+    android.hardware.radio@1.6.vendor:64 \
     android.hardware.secure_element@1.2 \
     android.hardware.secure_element@1.2.vendor:64 \
     libprotobuf-cpp-full \
