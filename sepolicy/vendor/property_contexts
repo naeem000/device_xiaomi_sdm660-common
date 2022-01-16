@@ -3,15 +3,14 @@ ro.camera.req.fmq.size  u:object_r:vendor_camera_prop:s0
 ro.camera.res.fmq.size  u:object_r:vendor_camera_prop:s0
 
 # Fingerprint
-fpc_kpi                         u:object_r:vendor_fp_prop:s0
-persist.sys.fp.                 u:object_r:vendor_fp_prop:s0
-persist.sys.fp.vendor           u:object_r:vendor_fp_prop:s0
-persist.vendor.fpc.dump_data    u:object_r:vendor_fp_prop:s0
-persist.vendor.sys.fp.vendor    u:object_r:vendor_fp_prop:s0
-ro.boot.dp                      u:object_r:vendor_fp_prop:s0
-ro.boot.fp                      u:object_r:vendor_fp_prop:s0
-ro.boot.fpsensor                u:object_r:vendor_fp_prop:s0
-sys.fp.vendor                   u:object_r:vendor_fp_prop:s0
+fpc_kpi                         u:object_r:vendor_fp_prop:s0 exact enum fpc
+persist.sys.fp.                 u:object_r:vendor_fp_prop:s0 prefix
+persist.sys.fp.vendor           u:object_r:vendor_fp_prop:s0 exact enum fpc goodix
+persist.vendor.fpc.dump_data    u:object_r:vendor_fp_prop:s0 exact enum fpc
+persist.vendor.sys.fp.vendor    u:object_r:vendor_fp_prop:s0 exact enum fpc goodix
+ro.boot.fp                      u:object_r:vendor_fp_prop:s0 exact enum fpc goodix
+ro.boot.fpsensor                u:object_r:vendor_fp_prop:s0 exact enum fpc goodix
+sys.fp.vendor                   u:object_r:vendor_fp_prop:s0 exact enum fpc goodix
 
 # QSPM
 ro.vendor.qspm.enable   u:object_r:vendor_qspm_prop:s0 exact bool
