@@ -13,29 +13,7 @@
 -->
 
 <resources>
-    <!-- Key codes of gestures. If the gesture is not supported set it to 0. -->
-    <integer name="config_doubleTapKeyCode">143</integer>
 
-    <!-- Default settings for gestures
-            0 - Disabled
-            1 - Wake device
-            2 - Toggle flashlight
-            3 - Toggle airplane mode
-            4 - Play/Pause music
-            5 - Next music
-            6 - Previous music
-            7 - Open camera
-            8 - Open dialer -->
-    <integer name="config_doubleTapDefault">1</integer>
+    <!-- overlay components -->
 
-    <bool name="config_enableKeyHandler">true</bool>
-
-    <!-- The list of components which should be automatically disabled. -->
-    <string-array name="config_deviceDisabledComponents" translatable="false">
-        <item>com.google.android.gms/com.google.android.gms.nearby.messages.service.NearbyMessagesService</item>
-    </string-array>
-
-    <!-- Buttom brightness setting allowed by the power manager.
-         The user is forbidden from setting the brightness. -->
-    <integer name="config_buttonBrightnessSettingDefault">64</integer>
 </resources>
