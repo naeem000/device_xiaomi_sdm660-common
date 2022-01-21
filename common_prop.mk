@@ -1,9 +1,11 @@
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.vc_call_vol_steps=7 \
-    vendor.audio.feature.compr_voip.enable=true \
-    vendor.audio.feature.spkr_prot.enable=false \
-    vendor.audio.feature.ssrec.enable=false
+    vendor.audio.adm.buffering.ms=3
+
+# AV
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.mm.enable.qcom_parser=16777215
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -12,6 +14,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.qcom.bluetooth.enable.splita2dp=true \
     persist.vendor.qcom.bluetooth.soc=cherokee \
     vendor.qcom.bluetooth.soc=cherokee
+
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.bluetooth.library_name=libbluetooth_qti.so
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -45,9 +50,21 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sensor.proximity=true \
     ro.sensor.pickup=android.sensor.tilt_detector
 
+# PROP from AOSPA
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    arm64.memtag.process.system_server=off \
+    ro.control_privapp_permissions=enforce \
+    ro.launcher.blur.appLaunch=0
+
 # GMS
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase.ms=android-xiaomi-rev2
+
+# Graphics
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.egl=adreno \
+    ro.hardware.vulkan=adreno \
+    ro.opengles.version=196610
 
 # HAL1 apps list
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -87,6 +104,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # OEM Unlock reporting
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.oem_unlock_supported=1
+
+# Perf
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.perf-hal.ver=2.2 \
+    ro.vendor.extension_library=libqti-perfd-client.so \
+    vendor.power.pasr.enabled=true
 
 # Proximity
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -130,6 +153,36 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # System restart
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.ssr.restart_level=ALL_ENABLE
+
+# Telephony
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.multisim.config=dsds \
+    persist.vendor.radio.apm_sim_not_pwdn=1 \
+    persist.vendor.radio.custom_ecc=1 \
+    persist.vendor.radio.enableadvancedscan=true \
+    persist.vendor.radio.procedure_bytes=SKIP \
+    persist.vendor.radio.rat_on=combine \
+    persist.vendor.radio.sib16_support=1
+
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    DEVICE_PROVISIONED=1 \
+    net.tethering.noprovisioning=true \
+    persist.sys.fflag.override.settings_network_and_internet_v2=true \
+    persist.vendor.cne.feature=1 \
+    persist.vendor.data.mode=concurrent \
+    persist.vendor.dpm.feature=11 \
+    ril.subscription.types=NV,RUIM \
+    ro.telephony.default_network=33,33 \
+    ro.vendor.use_data_netmgrd=true \
+    telephony.lteOnCdmaDevice=1
+
+ifeq ($(TARGET_BUILD_VARIANT),user)
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.ims.disableADBLogs=1 \
+    persist.vendor.ims.disableDebugLogs=1 \
+    persist.vendor.ims.disableIMSLogs=1 \
+    persist.vendor.ims.disableQXDMLogs=1
+endif
 
 # Thermal configs path
 PRODUCT_PROPERTY_OVERRIDES += \

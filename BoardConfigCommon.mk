@@ -25,9 +25,6 @@
 # Common Tree Path
 COMMON_PATH := device/xiaomi/sdm660-common
 
-# Kernel version
-TARGET_KERNEL_VERSION ?= 4.4
-
 # A/B
 ifeq ($(ENABLE_AB), true)
 AB_OTA_UPDATER := true
@@ -63,12 +60,37 @@ TARGET_2ND_CPU_VARIANT := kryo
 
 # Audio
 AUDIO_FEATURE_ENABLED_DYNAMIC_LOG := false
+AUDIO_FEATURE_ENABLED_EXTN_RESAMPLER := true
+AUDIO_FEATURE_ENABLED_SVA_MULTI_STAGE := true
+BOARD_USES_ALSA_AUDIO := true
+BOARD_SUPPORTS_SOUND_TRIGGER := true
+BOARD_USES_ADRENO := true
+TARGET_USES_AOSP_FOR_AUDIO ?= false
+TARGET_USES_MEDIA_EXTENSIONS := true
+TARGET_USES_QCOM_MM_AUDIO := true
+USE_CUSTOM_AUDIO_POLICY := 1
+USE_XML_AUDIO_POLICY_CONF := 1
+
+# Bluetooth
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_QCOM := true
+BOARD_HAS_QCA_BT_SOC := "cherokee"
+TARGET_USE_QTI_BT_STACK := true
+TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := sdm660
+TARGET_NO_BOOTLOADER := true
 
 # Board
+BOARD_USES_QCOM_HARDWARE := true
+TARGET_USES_QCOM_BSP := false
+TARGET_BOARD_PLATFORM := sdm660
+OVERRIDE_QCOM_HARDWARE_VARIANT := sdm660
 BOARD_VENDOR := xiaomi
+ifeq ($(TARGET_KERNEL_VERSION),4.19)
+TARGET_USES_UM_4_19 := true
+endif
 
 # Build Rules
 BUILD_BROKEN_DUP_RULES := true
@@ -77,6 +99,9 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
+
+# ConfigFS
+TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/configs/config.fs
 
 # Display
 TARGET_USES_GRALLOC1 := true
@@ -91,6 +116,8 @@ endif
 TARGET_ENABLE_MEDIADRM_64 := true
 
 # GPS
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
+GNSS_HIDL_VERSION := 2.1
 LOC_HIDL_VERSION := 4.0
 
 # HIDL
@@ -100,12 +127,13 @@ DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/manifest_target_level_5.xml
 else
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/manifest_target_level_3.xml
 endif
-ifeq ($(filter vibrator,$(TARGET_COMMON_QTI_COMPONENTS)),)
+ifneq ($(CONFIG_QTI_HAPTICS),true)
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/manifest_vibrator.xml
 endif
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/configs/vintf/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
-    $(COMMON_PATH)/configs/vintf/device_framework_compatibility_matrix.xml
+    $(COMMON_PATH)/configs/vintf/device_framework_compatibility_matrix.xml \
+    $(COMMON_PATH)/configs/vintf/vendor_framework_compatibility_matrix.xml
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 androidboot.console=ttyMSM0 earlycon=msm_serial_dm,0xc170000 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 androidboot.configfs=true androidboot.usbcontroller=a800000.dwc3
@@ -118,11 +146,19 @@ BOARD_KERNEL_CMDLINE += usbcore.autosuspend=7
 BOARD_KERNEL_CMDLINE += loop.max_part=7
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET     := 0x01000000
 TARGET_KERNEL_APPEND_DTB := true
-TARGET_KERNEL_SOURCE ?= kernel/xiaomi/sdm660
-KERNEL_SD_LLVM_SUPPORT := true
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_HEADER_ARCH := arm64
+TARGET_KERNEL_CLANG_COMPILE := true
+
+# LIBION
+TARGET_USES_ION := true
+
+# Move Wi-Fi modules to vendor.
+PRODUCT_VENDOR_MOVE_ENABLED := true
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
@@ -139,7 +175,7 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
-# Directory
+# Partition Directory
 TARGET_COPY_OUT_PRODUCT := system/product
 TARGET_COPY_OUT_VENDOR := vendor
 
@@ -152,8 +188,14 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
 # Properties
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
+# RIL & Telephony
+ENABLE_VENDOR_RIL_SERVICE := true
+DEVICE_FRAMEWORK_MANIFEST_FILE += $(COMMON_PATH)/configs/telephony/framework_manifest.xml
+
 # SELinux
+include device/qcom/sepolicy-legacy/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+PRODUCT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
 
 # Soong
 SOONG_CONFIG_NAMESPACES += sdm660-common
@@ -161,7 +203,11 @@ SOONG_CONFIG_sdm660-common := kernel
 SOONG_CONFIG_sdm660-common_kernel := v$(subst .,_,$(TARGET_KERNEL_VERSION))
 
 # Symlinks
-TARGET_MOUNT_POINTS_SYMLINKS := true
+BOARD_ROOT_EXTRA_SYMLINKS := \
+    /vendor/dsp:/dsp \
+    /vendor/firmware_mnt:/firmware \
+    /vendor/bt_firmware:/bt_firmware \
+    /mnt/vendor/persist:/persist
 
 # Treble
 PRODUCT_FULL_TREBLE_OVERRIDE := true
