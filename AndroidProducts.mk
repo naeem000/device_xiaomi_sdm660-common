@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_jasmine_sprout.mk
+    $(LOCAL_DIR)/arrow_jasmine_sprout.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_jasmine_sprout-user \
-    lineage_jasmine_sprout-userdebug \
-    lineage_jasmine_sprout-eng
+    arrow_jasmine_sprout-user \
+    arrow_jasmine_sprout-userdebug \
+    arrow_jasmine_sprout-eng
