@@ -144,9 +144,9 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0.vendor
 
 # Display
--include hardware/qcom-caf/sdm660/display/display-commonsys-intf/config/display-interfaces-product.mk
--include hardware/qcom-caf/sdm660/display/display-commonsys-intf/config/display-product-system.mk
--include hardware/qcom-caf/sdm660/display/display-commonsys/config/display-product-commonsys.mk
+$(call inherit-product, hardware/qcom-caf/sdm660/display/display-commonsys-intf/config/display-interfaces-product.mk)
+$(call inherit-product, hardware/qcom-caf/sdm660/display/display-commonsys-intf/config/display-product-system.mk)
+$(call inherit-product, hardware/qcom-caf/sdm660/display/display-commonsys/config/display-product-commonsys.mk)
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0 \
     android.frameworks.displayservice@1.0.vendor \
@@ -201,7 +201,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.freeform_window_management.xml
 
 # GPS
-$(call inherit-product-if-exists, hardware/qcom/gps/gps_vendor_product.mk)
+$(call inherit-product, hardware/qcom/gps/gps_vendor_product.mk)
 
 # Health
 PRODUCT_PACKAGES += \
