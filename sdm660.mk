@@ -70,6 +70,7 @@ endif
 
 # ANT
 PRODUCT_PACKAGES += \
+    AntHalService \
     com.dsi.ant@1.0.vendor
 
 # Apex
@@ -100,17 +101,12 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/audio/audio_policy_configuration_a2dp_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_a2dp_offload_disabled.xml
 
-# AuthSecret
-PRODUCT_PACKAGES += \
-    android.hardware.authsecret@1.0-service
-
 # Biometrics
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sdm660 \
     android.hardware.biometrics.fingerprint@2.1.vendor
 
 # Bluetooth
-include vendor/qcom/opensource/commonsys-intf/bluetooth/bt-commonsys-intf-board.mk
 $(call inherit-product, vendor/qcom/opensource/commonsys-intf/bluetooth/bt-system-opensource-product.mk)
 
 PRODUCT_PACKAGES += \
@@ -191,8 +187,6 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service \
     android.hardware.drm@1.4-service.clearkey \
     android.hardware.drm@1.4.vendor
 
@@ -201,7 +195,27 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.freeform_window_management.xml
 
 # GPS
-$(call inherit-product, hardware/qcom/gps/gps_vendor_product.mk)
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@2.1.vendor \
+    android.hardware.gnss@2.1-impl-qti \
+    android.hardware.gnss@2.1-service-qti \
+    android.hardware.gnss@2.1-service-qti.vendor \
+    flp.conf \
+    gnss_antenna_info.conf \
+    gps.conf \
+    gnss@2.0-base.policy \
+    gnss@2.0-xtra-daemon.policy \
+    gnss@2.0-xtwifi-client.policy \
+    gnss@2.0-xtwifi-inet-agent.policy \
+    libbatching \
+    libgeofencing \
+    libgnss \
+    libgps.utils_headers \
+    libgps.utils \
+    libloc_core \
+    libloc_pla_headers \
+    liblocation_api_headers \
+    liblocation_api
 
 # Health
 PRODUCT_PACKAGES += \
@@ -256,7 +270,11 @@ PRODUCT_PACKAGES += \
     libion
 
 # IPACM
-$(call inherit-product, vendor/qcom/opensource/data-ipa-cfg-mgr/ipacm_vendor_product.mk)
+PRODUCT_PACKAGES += \
+    ipacm \
+    ipacm.rc \
+    IPACM_cfg.xml \
+    libipanat
 
 # IRSC
 PRODUCT_COPY_FILES += \
@@ -300,7 +318,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libavmediaserviceextensions \
     libmediametrics \
-    libregistermsext
+    libregistermsext \
+    mediaserver64 \
+    mediaserverwrapper
 
 # Netutils
 PRODUCT_PACKAGES += \
@@ -344,6 +364,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/perf/configs/commonresourceconfigs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/commonresourceconfigs.xml \
     $(COMMON_PATH)/perf/configs/commonsysnodesconfigs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/commonsysnodesconfigs.xml \
+    $(COMMON_PATH)/perf/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf \
     $(COMMON_PATH)/perf/configs/perfboostsconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfboostsconfig.xml \
     $(COMMON_PATH)/perf/configs/perfconfigstore.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfconfigstore.xml \
     $(COMMON_PATH)/perf/configs/targetconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/targetconfig.xml \
@@ -410,8 +431,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.webview.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.webview.xml
 
 # Power
-$(call inherit-product, vendor/qcom/opensource/power/power-vendor-board.mk)
-$(call inherit-product, vendor/qcom/opensource/power/power-vendor-product.mk)
+PRODUCT_PACKAGES += \
+    android.hardware.power-service \
+    android.hardware.power-impl
+
+PRODUCT_COPY_FILES += vendor/qcom/opensource/power/config/sdm660/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
 # Public Libraries
 PRODUCT_COPY_FILES += \
@@ -507,10 +531,10 @@ PRODUCT_BOOT_JARS += \
     telephony-ext
 
 # USB
-$(call inherit-product, vendor/qcom/opensource/usb/vendor_product.mk)
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.2-service \
-    init.aospa.usb.rc
+    android.hardware.usb@1.2-service-qti \
+    init.qcom.usb.rc \
+    init.qcom.usb.sh
 
 # Vibrator
 ifneq ($(CONFIG_QTI_HAPTICS),true)
@@ -518,7 +542,11 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
 else
-$(call inherit-product, vendor/qcom/opensource/vibrator/vibrator-vendor-product.mk)
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.vibrator.service
+
+PRODUCT_COPY_FILES += \
+      vendor/qcom/opensource/vibrator/excluded-input-devices.xml:vendor/etc/excluded-input-devices.xml
 endif
 
 # VNDK
@@ -528,6 +556,7 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-vendorcompat \
     libprotobuf-cpp-lite-vendorcompat \
     libstdc++.vendor_32  \
+    com.android.vndk.current.on_vendor \
     vndk-ext
 
 # VNDK
@@ -536,6 +565,7 @@ PRODUCT_EXTRA_VNDK_VERSIONS := 28 29 30
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
+    android.hardware.wifi.supplicant-service \
     hostapd \
     libqsap_sdk \
     libwifi-hal-qcom \

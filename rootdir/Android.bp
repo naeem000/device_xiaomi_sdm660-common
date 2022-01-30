@@ -25,13 +25,6 @@ sh_binary {
 }
 
 prebuilt_etc {
-    name: "init.aospa.usb.rc",
-    src: "etc/init.aospa.usb.rc",
-    sub_dir: "init",
-    vendor: true,
-}
-
-prebuilt_etc {
     name: "init.msm.usb.configfs.rc",
     src: "etc/init.msm.usb.configfs.rc",
     vendor: true,
