@@ -378,10 +378,6 @@ PRODUCT_PACKAGES += \
     libtflite \
     vendor.qti.hardware.servicetracker@1.2.vendor
 
-PRODUCT_BOOT_JARS += \
-    QPerformance \
-    UxPerformance
-
 PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0 \
     libavservices_minijail
