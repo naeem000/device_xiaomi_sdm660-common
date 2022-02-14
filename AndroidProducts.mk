@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/arrow_jasmine_sprout.mk
+    $(LOCAL_DIR)/blaster_jasmine_sprout.mk
 
 COMMON_LUNCH_CHOICES := \
-    arrow_jasmine_sprout-user \
-    arrow_jasmine_sprout-userdebug \
-    arrow_jasmine_sprout-eng
+    blaster_jasmine_sprout-user \
+    blaster_jasmine_sprout-userdebug \
+    blaster_jasmine_sprout-eng

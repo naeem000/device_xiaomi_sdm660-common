@@ -1,0 +1,22 @@
+[
+
+    {
+        "remote":       "github",
+        "repository":   "naeem000/android_hardware_qcom-caf_audio",
+        "target_path":  "vendor/qcom/opensource/audio-hal/primary-hal",
+        "revision":     "Caf"
+    },
+    {
+        "remote":       "github",
+        "repository":   "naeem000/android_hardware_qcom-caf_display",
+        "target_path":  "hardware/qcom/display",
+        "revision":     "Caf"
+    },
+    {
+        "remote":       "github",
+        "repository":   "naeem000/android_hardware_qcom-caf_audio",
+        "target_path":  "hardware/qcom/media",
+        "revision":     "Caf"
+    }
+
+]
