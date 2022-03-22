@@ -123,9 +123,14 @@ vendor.camera.aux.packagelist=com.google.android.GoogleCamera,com.android.camera
 # Codec2 switch
 debug.media.codec2=2
 
+# CNE
+persist.vendor.cne.feature=1
+persist.vendor.mwqem.enable=1
+
 # Data
 persist.vendor.data.iwlan.enable=true
 persist.vendor.data.mode=concurrent
+persist.data.netmgrd.qos.enable=true
 ro.telephony.iwlan_operation_mode=legacy
 ro.vendor.use_data_netmgrd=true
 
@@ -186,9 +191,6 @@ ro.vendor.perf.scroll_opt=true
 persist.rcs.supported=0
 
 # Radio
-persist.dbg.volte_avail_ovr=1
-persist.dbg.vt_avail_ovr=1
-persist.dbg.wfc_avail_ovr=1
 persist.radio.multisim.config=dsds
 persist.sys.fflag.override.settings_provider_model=false
 persist.vendor.qti.telephony.vt_cam_interface=2
@@ -211,6 +213,17 @@ persist.vendor.radio.sib16_support=1
 ro.telephony.default_cdma_sub=0
 ro.telephony.default_network=22,22
 telephony.lteOnCdmaDevice=1
+
+# Radio (IMS)
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
+persist.vendor.ims.disableIMSLogs=1
+persist.vendor.ims.disableADBLogs=1
+persist.vendor.ims.disableDebugDataPathLogs=1
+persist.vendor.ims.disableDebugLogs=1
+persist.vendor.ims.disableSigHandler=1
+persist.vendor.ims.disableQXDMLogs=1
 
 # Rendering
 debug.egl.hw=1

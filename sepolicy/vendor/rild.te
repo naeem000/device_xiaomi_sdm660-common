@@ -1,1 +1,3 @@
 allow rild diag_device:chr_file rw_file_perms;
+
+binder_call(rild, qtidataservices_app)

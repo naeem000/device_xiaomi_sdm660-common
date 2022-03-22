@@ -465,6 +465,7 @@ PRODUCT_COPY_FILES += \
 # Low power Whitelist
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml \
+    $(COMMON_PATH)/configs/qti_whitelist_system_ext.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist_system_ext.xml
 
 # QMI
 PRODUCT_PACKAGES += \
@@ -482,6 +483,10 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.3.vendor \
     android.hardware.radio.deprecated@1.0.vendor \
     android.hardware.secure_element@1.2.vendor \
+    extphonelib \
+    extphonelib-product \
+    extphonelib.xml \
+    extphonelib_product.xml \
     librmnetctl \
     libprotobuf-cpp-full \
     qti-telephony-hidl-wrapper \
