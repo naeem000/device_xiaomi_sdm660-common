@@ -1,1 +1,1 @@
-allow sensors diag_device:chr_file { read };
+allow sensors diag_device:chr_file rw_file_perms;

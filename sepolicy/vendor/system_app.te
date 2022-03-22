@@ -2,7 +2,6 @@ allow system_app proc_vmallocinfo:file read;
 allow system_app sysfs_zram:file r_file_perms;
 
 allow system_app {
-  blkio_dev
   kcal_dev
   sysfs_graphics
   sysfs_thermal

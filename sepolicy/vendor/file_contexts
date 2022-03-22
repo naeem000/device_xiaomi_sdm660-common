@@ -4,13 +4,6 @@
 # Biometric
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.xiaomi_sdm660                              u:object_r:hal_fingerprint_sdm660_exec:s0
 
-# Camera
-/data/misc/camera                                                                                                                  u:object_r:camera_data_file:s0
-
-# blkio
-/dev/blkio(/.*)?                                                                                                                   u:object_r:blkio_dev:s0
-/dev/blkio/background(/.*)?                                                                                                        u:object_r:blkio_dev:s0
-
 # Executables
 /vendor/bin/sh                                                                                                                     u:object_r:vendor_shell_exec:s0
 
@@ -57,9 +50,6 @@
 
 # Power
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.xiaomi_sdm660-libperfmgr                                          u:object_r:hal_power_default_exec:s0
-
-# Root files
-/proc/sys/fs/protected_regular                                                                                                     u:object_r:proc:s0
 
 # Service HALs
 /(vendor|system/vendor)/bin/hw/android\.hardware\.authsecret@1\.0-service                                                          u:object_r:hal_authsecret_default_exec:s0

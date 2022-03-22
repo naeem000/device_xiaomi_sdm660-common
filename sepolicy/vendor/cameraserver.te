@@ -1,4 +1,2 @@
-set_prop(cameraserver, system_prop)
+allow cameraserver vendor_persist_camera_prop:file { read };
 binder_call(cameraserver, mediacodec)
-get_prop(cameraserver, vendor_persist_camera_prop)
-get_prop(cameraserver, vendor_video_prop)
