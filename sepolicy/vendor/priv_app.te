@@ -1,4 +1,5 @@
 allow priv_app sysfs_graphics:file { open read };
+allow priv_app zygote:unix_stream_socket { getopt };
 
 dontaudit priv_app sysfs:file read;
 dontaudit priv_app zygote:dir search;
