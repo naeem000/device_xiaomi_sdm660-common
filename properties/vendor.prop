@@ -116,9 +116,9 @@ ro.kernel.ebpf.supported=true
 # Camera
 persist.vendor.camera.dual.isp.sync=0
 persist.vendor.camera.HAL3.enabled=1
-vendor.camera.aux.packageblacklist=com.discord
-camera.aux.packagelist=com.google.android.GoogleCamera,com.android.camera,org.codeaurora.snapcam
-vendor.camera.aux.packagelist=com.google.android.GoogleCamera,com.android.camera,org.codeaurora.snapcam
+vendor.camera.aux.packageexcludelist=com.discord
+camera.aux.packagelist=com.google.android.GoogleCamera,org.codeaurora.snapcam,com.google.android.apps.cameralite
+vendor.camera.aux.packagelist=com.google.android.GoogleCamera,org.codeaurora.snapcam,com.google.android.apps.cameralite
 
 # Codec2 switch
 debug.media.codec2=2

@@ -14,7 +14,8 @@ vendor.bluetooth.soc=cherokee
 ro.surface_flinger.supports_background_blur=0
 
 # Camera
-persist.vendor.camera.privapp.list=org.codeaurora.snapcam
+persist.vendor.camera.privapp.list=com.google.android.GoogleCamera,org.codeaurora.snapcam,com.google.android.apps.cameralite
+persist.camera.privapp.list=com.google.android.GoogleCamera,org.codeaurora.snapcam,com.google.android.apps.cameralite
 
 # Charger
 ro.charger.enable_suspend=true
