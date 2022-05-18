@@ -46,10 +46,8 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String PREF_KEY_FPS_INFO = "fps_info";
     
     public static final  String CATEGORY_AUDIO_AMPLIFY = "audio_amplify";
-    public static final  String PREF_EARPIECE_GAIN = "earpiece_gain";
     public static final  String PREF_HEADPHONE_GAIN = "headphone_gain";
     public static final  String PREF_MIC_GAIN = "mic_gain";
-    public static final  String EARPIECE_GAIN_PATH = "/sys/kernel/sound_control/earpiece_gain";
     public static final  String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
     public static final  String MIC_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
 
@@ -86,31 +84,16 @@ public class DeviceSettings extends PreferenceFragment implements
             VibrationSeekBarPreference vibrationStrength = (VibrationSeekBarPreference) findPreference(PREF_VIBRATION_STRENGTH);
             vibrationStrength.setOnPreferenceChangeListener(this);
         } else { getPreferenceScreen().removePreference(findPreference(CATEGORY_VIBRATOR)); }
-
-        // Amplify Audio 
-        PreferenceCategory gainCategory = (PreferenceCategory) findPreference(CATEGORY_AUDIO_AMPLIFY);
-        // Earpiece Gain
-        if (FileUtils.fileWritable(EARPIECE_GAIN_PATH)) {
-           CustomSeekBarPreference earpieceGain = (CustomSeekBarPreference) findPreference(PREF_EARPIECE_GAIN);
-           earpieceGain.setOnPreferenceChangeListener(this);
-        } else {
-          gainCategory.removePreference(findPreference(PREF_EARPIECE_GAIN));
-        }
-        // Headphone Gain
-        if (FileUtils.fileWritable(HEADPHONE_GAIN_PATH)) {
+        
+        // Headphone & Mic Gain
+        if (FileUtils.fileWritable(HEADPHONE_GAIN_PATH) && FileUtils.fileWritable(MIC_GAIN_PATH)) {
            CustomSeekBarPreference headphoneGain = (CustomSeekBarPreference) findPreference(PREF_HEADPHONE_GAIN);
            headphoneGain.setOnPreferenceChangeListener(this);
-        } else {
-          gainCategory.removePreference(findPreference(PREF_HEADPHONE_GAIN));
-        }
-        // Mic Gain
-        if (FileUtils.fileWritable(MIC_GAIN_PATH)) {
            CustomSeekBarPreference micGain = (CustomSeekBarPreference) findPreference(PREF_MIC_GAIN);
            micGain.setOnPreferenceChangeListener(this);
         } else {
-          gainCategory.removePreference(findPreference(PREF_MIC_GAIN));
+          getPreferenceScreen().removePreference(findPreference(CATEGORY_AUDIO_AMPLIFY));
         }
-        
         // Display Category
         PreferenceCategory displayCategory = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
         // Doze
@@ -145,10 +128,6 @@ public class DeviceSettings extends PreferenceFragment implements
             case PREF_VIBRATION_STRENGTH:
                 double vibrationValue = (int) value / 100.0 * (MAX_VIBRATION - MIN_VIBRATION) + MIN_VIBRATION;
                 FileUtils.setValue(VIBRATION_STRENGTH_PATH, vibrationValue);
-                break;
-
-            case PREF_EARPIECE_GAIN:
-                FileUtils.setValue(EARPIECE_GAIN_PATH, (int) value);
                 break;
 
             case PREF_HEADPHONE_GAIN:
