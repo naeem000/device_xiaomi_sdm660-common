@@ -9,9 +9,11 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Pixel Experience stuff
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
-TARGET_INCLUDE_STOCK_ARCORE := false
+# Inherit some common ArrowOS stuff
+$(call inherit-product, vendor/arrow/config/common.mk)
+
+# ArrowOS Maintainer Config
+DEVICE_MAINTAINER := Immanuel_Raj(@iamimmanuelraj)
 
 # We are a phone
 IS_PHONE := true
@@ -29,6 +31,6 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := jasmine_sprout
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_MODEL := Mi A2
-PRODUCT_NAME := aosp_jasmine_sprout
+PRODUCT_NAME := arrow_jasmine_sprout
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
